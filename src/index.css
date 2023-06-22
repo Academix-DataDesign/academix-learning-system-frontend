@@ -1,0 +1,26 @@
+.box {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .box .rectangle-wrapper {
+    border: 0px none;
+    height: 60px;
+    width: 350px;
+  }
+  
+  .box .rectangle {
+    background-color: #ffffff;
+    border: 1px solid;
+    border-color: #3982b8;
+    border-radius: 3px;
+    height: 60px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 350px;
+  }
+  
