@@ -1,5 +1,5 @@
 import { Fragment } from "react"
-import Input from "./components/UI/Input"
+import Input from "./components/UI/Input/Input"
 
 function App() {
   return (
