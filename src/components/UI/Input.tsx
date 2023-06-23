@@ -1,5 +1,5 @@
 
-interface BoxProps {
+interface Input {
   classes: string[];
   type: string;
   required?: boolean; 
@@ -7,7 +7,7 @@ interface BoxProps {
   options?: string[]; 
 }
 
-const Input: React.FC<BoxProps> = ({ classes, type, required, placeholder, options }) => {
+const Input: React.FC<Input> = ({ classes, type, required, placeholder, options }) => {
   if (type === "select" && options && options.length > 0) {
     return (
       <div className={classes.join(" ")}>
@@ -23,6 +23,7 @@ const Input: React.FC<BoxProps> = ({ classes, type, required, placeholder, optio
       </div>
     );
   }
+  
 
   return (
     <div className={classes.join(" ")}>
