@@ -6,7 +6,7 @@ function App() {
   return (
     <Fragment>
       <h1>Hello world!</h1>
-      <Input classes={["idk", "idk"]} type="text" placeholder={"idk"} />
+      <Input classes={["idk", "idk"]} type="text" placeholder={"Email"} />
       <Jodza />
     </Fragment>
   );

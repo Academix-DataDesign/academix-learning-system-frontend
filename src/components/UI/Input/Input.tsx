@@ -33,7 +33,12 @@ const Input = ({
   return (
     <div className={classes.join(" ")}>
       <div className="rectangle-wrapper">
-        <input type={type} required={required} placeholder={placeholder} />
+        <input
+          className="input"
+          type={type}
+          required={required}
+          placeholder={placeholder}
+        />
       </div>
     </div>
   );
