@@ -22,6 +22,14 @@ jobs:
           touch ~/.ssh/known_hosts
           ssh-keyscan -t rsa 54.37.204.231 >> ~/.ssh/known_hosts
 
+      - name: Update server code
+        run: |
+          if sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no ubuntu@54.37.204.231 "cd /var/www/html/academix-learning-system-backend/ && sudo git pull --rebase origin main"; then
+            echo "Server code update successful."
+          else
+            echo "Failed to update server code."
+          fi
+
       - name: Deploy to Apache server
         run: |
           if sshpass -p ${{ secrets.SSH_PASSWORD }} scp -o StrictHostKeyChecking=no -r ./dist/* ubuntu@54.37.204.231:/var/www/html/academix-learning-system-frontend; then
