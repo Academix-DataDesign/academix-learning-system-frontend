@@ -1,8 +1,5 @@
 import Button from "./components/UI/Button/Button";
 
-
 export default function Jodza() {
-  return (
-    <Button text="Login" type="submit"/>
-  )
+  return <Button text="Log In" type="submit" />;
 }

@@ -1,4 +1,5 @@
-interface Input {
+import "./Input.scss";
+interface InputProps {
   classes: string[];
   type: string;
   required?: boolean;
@@ -6,16 +7,16 @@ interface Input {
   options?: string[];
 }
 
-const Input: React.FC<Input> = ({
+const Input = ({
   classes,
   type,
   required,
   placeholder,
   options,
-}) => {
+}: InputProps) => {
   if (type === "select" && options && options.length > 0) {
     return (
-      <div className={classes.join(" ")}>
+      <div className={`${classes.join(" ")} input`}>
         <div className="rectangle-wrapper">
           <select required={required} placeholder={placeholder}>
             {options.map((option) => (

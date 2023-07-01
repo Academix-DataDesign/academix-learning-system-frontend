@@ -1,23 +1,26 @@
 .btn {
-    background-color: #ffffff;
+    background-color: #235284;
     border: 1px solid;
-    border-color: #235284;
+    color: #fff;
     border-radius: 50px;
-    height: 30px;
+    padding: 5px 23px;
     position: relative;
-    width: 80px;
-  }
-  .register {
-    
-    color: #235284;
-    font-family: "Mulish-Bold", Helvetica;
-    font-size: 18px;
-    font-weight: 700;
-    
-    letter-spacing: 0;
-    line-height: normal;
-    position: absolute;
-    text-align: center;
-    
-  }
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+
+.btn:hover {
+  background-color: #3982B8;
+}
+
+.register {
+  color: #235284;
+  font-family: "Mulish-Bold", Helvetica;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+}
   
