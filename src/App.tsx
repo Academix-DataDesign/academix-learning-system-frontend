@@ -5,7 +5,7 @@ import Jodza from "./Jodza";
 function App() {
   return (
     <Fragment>
-      <h1>Hello world! Checking auto deployment feature 2!</h1>
+      <h1>Hello world!</h1>
       <Input classes={["idk", "idk"]} type="text" placeholder={"idk"} />
       <Jodza />
     </Fragment>
