@@ -18,9 +18,13 @@ jobs:
           mkdir -p ~/.ssh
           touch ~/.ssh/known_hosts
           ssh-keyscan -t rsa 54.37.204.231 >> ~/.ssh/known_hosts
+
+      - name: Stash local changes
+        run: git stash
+
       - name: Update server code and build the React app
         run: |
-          sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no ubuntu@54.37.204.231 "cd /var/www/html/academix-learning-system-frontend/ && sudo git pull --rebase origin main && npm ci && npm run build"
+          sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -o StrictHostKeyChecking=no ubuntu@54.37.204.231 "cd /var/www/html/academix-learning-system-frontend/ && sudo git fetch && git checkout main && git reset --hard origin/main && npm ci && npm run build"
           # Check the exit code of the SSH command
           if [ $? -eq 0 ]; then
             echo "SSH connection, code update, and build successful."
