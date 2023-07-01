@@ -1,0 +1,31 @@
+name: Deploy to Apache Server
+
+on:
+  push:
+    branches:
+      - feature_auto_deployment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build React app
+        run: npm ci && npm run build
+
+      - name: Configure known hosts
+        run: |
+          mkdir -p ~/.ssh
+          touch ~/.ssh/known_hosts
+          ssh-keyscan -t rsa 54.37.204.231 >> ~/.ssh/known_hosts
+
+      - name: Deploy to Apache server
+        run: |
+          if sshpass -p ${{ secrets.SSH_PASSWORD }} scp -o StrictHostKeyChecking=no -r ./dist/* ubuntu@54.37.204.231:/var/www/html/academix-learning-system-frontend; then
+            echo "Deployment to Apache server successful."
+          else
+            echo "Failed to deploy to Apache server."
+          fi
