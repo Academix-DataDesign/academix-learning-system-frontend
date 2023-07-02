@@ -1,13 +1,17 @@
 import { Fragment } from "react";
 import Input from "./components/UI/Input/Input";
-import Jodza from "./Jodza";
+import Button from "./components/UI/Button/Button";
+import "./App.scss";
 
 function App() {
   return (
     <Fragment>
-      <h1>Hello world!</h1>
+      <h1>Hello there team of Academix!</h1>
+      <h2>We will build something awesome!</h2>
       <Input classes={["idk", "idk"]} type="text" placeholder={"Email"} />
-      <Jodza />
+      <br />
+      <Button text="Log In" variant="" />
+      <Button text="Register" variant="" />
     </Fragment>
   );
 }

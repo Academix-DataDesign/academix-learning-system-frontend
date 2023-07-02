@@ -1,0 +1,35 @@
+.search {
+    background-color: #f6f6f6;
+    border: 1px solid;
+    border-color: #4194cb;
+    border-radius: 50px;
+    height: 80px;
+    position: relative;
+    width: 700px;
+}
+
+.search .overlap-group {
+    background-color: #4194cb;
+    border-radius: 50px;
+    height: 55px;
+    left: 627px;
+    position: absolute;
+    top: 15px;
+    width: 55px;
+}
+
+.search .vector {
+    height: 23px;
+    left: 11px;
+    position: absolute;
+    top: 16px;
+    width: 32px;
+}
+
+.search .img {
+    height: 50px;
+    left: 37px;
+    position: absolute;
+    top: 14px;
+    width: 50px;
+}

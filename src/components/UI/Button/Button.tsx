@@ -5,7 +5,7 @@ interface Button {
   text: string;
 }
 
-export const Button: React.FC<Button> = ({ variant, text }) => {
+const Button = ({ variant, text }: Button) => {
   return (
     <button type="submit" className={`btn ${variant}`}>
       {text}

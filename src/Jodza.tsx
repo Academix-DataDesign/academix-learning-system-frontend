@@ -1,5 +1,11 @@
-import Button from "./components/UI/Button/Button";
+import SearchInput from "./components/UI/SearchInput/SearchInput";
 
-export default function Jodza() {
-  return <Button text="Log In" type="submit" />;
-}
+const Jodza = () => {
+  return (
+    <>
+      <SearchInput></SearchInput>
+    </>
+  );
+};
+
+export default Jodza;

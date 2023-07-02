@@ -1,0 +1,21 @@
+.box {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.box .vector-wrapper {
+    border: 0px none;
+    height: 50px;
+    width: 50px;
+}
+
+.box .vector {
+    height: 50px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 50px;
+}
