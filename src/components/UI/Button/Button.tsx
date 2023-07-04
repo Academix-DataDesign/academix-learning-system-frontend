@@ -1,16 +1,42 @@
+import { ButtonHTMLAttributes, FC } from "react";
 import "./Button.scss";
+import { VariantProps, cva } from "class-variance-authority";
+import { cn } from "../../../utils/cn";
 
-interface Button {
-  variant: string;
-  text: string;
+interface Button
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+
 }
 
-const Button = ({ variant, text }: Button) => {
+const buttonVariants = cva("btn", {
+  variants: {
+    variant: {
+      defaul: "",
+      login: "login",
+      login2: 'login2',
+      register: "register",
+      register2: "register2",
+
+    },
+    size: {
+      default: "default-size",
+      small: 'small-size',
+      medium: "medium-size",
+      large: "large-size",
+    },
+  },
+  defaultVariants: {
+    variant: "defaul",
+    size: "default",
+  },
+});
+
+const Button: FC<Button> = ({ className, size, variant, ...props }) => {
   return (
-    <button type="submit" className={`btn ${variant}`}>
-      {text}
-    </button>
+    <button className={cn(buttonVariants({variant, size, className}))} {...props} />
+      
   );
 };
 
-export default Button;
+export { Button, buttonVariants };

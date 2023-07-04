@@ -1,30 +1,64 @@
 .btn {
-  background-color: #235284;
   border: none;
   outline: none;
   font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: "Mulish-Bold", Helvetica;
   line-height: normal;
   color: #fff;
   border-radius: 50px;
-  padding: 15px 42px;
+  padding: 15px 30px;
   position: relative;
   cursor: pointer;
-  transition: background-color 0.25s;
+  transition: 0.25s;
+  text-align: center;
 }
 
-.btn:hover {
-  background-color: #3982B8;
+.login {
+  color: #ffffff;
+  background-color: #235284;
+}
+
+.login2 {
+  color: #ffffff;
+  background-color: #3982b8;
 }
 
 .register {
   color: #235284;
-  font-family: "Mulish-Bold", Helvetica;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #235284;
+}
+
+.register2 {
+  background-color: #ffffff;
+  color: #3982b8;
+  border: 1px solid;
+  border-color: #3982b8;
+}
+
+.small-size {
+  width: 100px;
+  padding: 0 10px;
+  height: 31px;
+  font-size: 14px;
+}
+
+.default-size {
+  width: 138px;
+  height: 51px;
+}
+
+.medium-size {
+  width: 154px;
+  height: 71px;
   font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: normal;
-  position: absolute;
-  text-align: center;
+}
+
+.large-size {
+  width: 184px;
+  height: 91px;
+  font-size: 22px;
 }

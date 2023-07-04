@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import Input from "./components/UI/Input/Input";
-import Button from "./components/UI/Button/Button";
+import { Button } from "./components/UI/Button/Button";
 import "./App.scss";
 
 function App() {
@@ -10,8 +10,10 @@ function App() {
       <h2>We will build something awesome!</h2>
       <Input classes={["idk", "idk"]} type="text" placeholder={"Email"} />
       <br />
-      <Button text="Log In" variant="" />
-      <Button text="Register" variant="" />
+      <Button variant='login2'>Log In</Button>
+      <Button variant='login'>Log In</Button>
+      <Button variant='register'>Register</Button>
+      <Button variant='register2'>Register</Button>
     </Fragment>
   );
 }
