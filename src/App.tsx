@@ -1,19 +1,20 @@
 import { Fragment } from "react";
-import Input from "./components/UI/Input/Input";
-import { Button } from "./components/UI/Button/Button";
 import "./App.scss";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Jodza from "./Jodza";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   return (
     <Fragment>
-      <h1>Hello there team of Academix!</h1>
-      <h2>We will build something awesome!</h2>
-      <Input variant='defaul' placeholder="Email"/>
-      <br />
-      <Button variant='login2'>Log In</Button>
-      <Button variant='login'>Log In</Button>
-      <Button variant='register'>Register</Button>
-      <Button variant='register2'>Register</Button>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Jodza />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </Router>
     </Fragment>
   );
 }
