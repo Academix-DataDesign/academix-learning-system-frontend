@@ -8,7 +8,7 @@ function App() {
     <Fragment>
       <h1>Hello there team of Academix!</h1>
       <h2>We will build something awesome!</h2>
-      <Input classes={["idk", "idk"]} type="text" placeholder={"Email"} />
+      <Input variant='defaul' placeholder="Email"/>
       <br />
       <Button variant='login2'>Log In</Button>
       <Button variant='login'>Log In</Button>

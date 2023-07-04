@@ -1,46 +1,25 @@
+import { InputHTMLAttributes, FC } from "react";
 import "./Input.scss";
-interface InputProps {
-  classes: string[];
-  type: string;
-  required?: boolean;
-  placeholder: string;
-  options?: string[];
-}
+import { VariantProps, cva } from "class-variance-authority";
+import { cn } from "../../../utils/cn";
+interface Input
+  extends InputHTMLAttributes<HTMLInputElement>,
+    VariantProps<typeof inputVariants> {}
 
-const Input = ({
-  classes,
-  type,
-  required,
-  placeholder,
-  options,
-}: InputProps) => {
-  if (type === "select" && options && options.length > 0) {
-    return (
-      <div className={`${classes.join(" ")} input`}>
-        <div className="rectangle-wrapper">
-          <select required={required} placeholder={placeholder}>
-            {options.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-    );
-  }
+const inputVariants = cva("input", {
+  variants: {
+    variant: {
+      defaul: "default",
+    },
+  },
+  defaultVariants: {
+    variant: "defaul",
+  },
+});
 
+const Input: FC<Input> = ({ className, variant, ...props }) => {
   return (
-    <div className={classes.join(" ")}>
-      <div className="rectangle-wrapper">
-        <input
-          className="input"
-          type={type}
-          required={required}
-          placeholder={placeholder}
-        />
-      </div>
-    </div>
+    <input {...props} className={cn(inputVariants({ variant, className }))} />
   );
 };
 
