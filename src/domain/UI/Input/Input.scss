@@ -6,14 +6,14 @@
   font-size: 20px;
   padding: 20px;
   margin: 30px 5px;
-}
 
-.input::placeholder {
-  color: #3982b8;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  &::placeholder {
+    color: #3982b8;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
 }
 
 .default {
