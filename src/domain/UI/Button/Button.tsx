@@ -10,7 +10,7 @@ interface Button
 const buttonVariants = cva("btn", {
   variants: {
     variant: {
-      defaul: "",
+      default: "btn",
       login: "login",
       login2: "login2",
       register: "register",
@@ -24,7 +24,7 @@ const buttonVariants = cva("btn", {
     },
   },
   defaultVariants: {
-    variant: "defaul",
+    variant: "default",
     size: "default",
   },
 });
@@ -38,4 +38,4 @@ const Button: FC<Button> = ({ className, size, variant, ...props }) => {
   );
 };
 
-export default Button ;
+export default Button;

@@ -1,5 +1,5 @@
-import Button from "../components/UI/Button/Button";
-import Input from "../components/UI/Input/Input";
+import Button from "../..//UI/Button/Button";
+import Input from "../../UI/Input/Input";
 import "./Register.scss";
 
 const UserRegister = () => {
@@ -20,7 +20,9 @@ const UserRegister = () => {
               <Input placeholder="Email" className="email" />
               <Input placeholder="Name" className="name" />
             </div>
-            <div className="text-wrapper-2">Create an <span>account</span></div>
+            <div className="text-wrapper-2">
+              Create an <span>account</span>
+            </div>
             <img className="listener" alt="Listener" src="listener.png" />
           </div>
           <div className="right">
@@ -29,11 +31,7 @@ const UserRegister = () => {
                 <div className="rectangle" />
               </div>
               <div className="overlap-group-wrapper">
-                <Button
-                  
-                  variant={"register"}
-                  className="text-wrapper-3 w-full"
-                >
+                <Button variant={"register"} className="text-wrapper-3 w-full">
                   Register
                 </Button>
               </div>
