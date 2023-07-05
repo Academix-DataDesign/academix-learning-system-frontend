@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Vocabulary.scss";
 import Input from "../../UI/Input/Input";
-import { Button } from "../../UI/Button/Button";
+import Button from "../../UI/Button/Button";
 import Spinner from "../../UI/Spinner/Spinner";
 import makeRequest from "../../../utils/word-api";
 
