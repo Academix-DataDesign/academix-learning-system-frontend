@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect, useState } from "react";
 import "./Vocabulary.scss";
 import Input from "../../UI/Input/Input";
 import { Button } from "../../UI/Button/Button";
 import Spinner from "../../UI/Spinner/Spinner";
+import makeRequest from "../../../utils/word-api";
 
 interface SynonymAntonymResponse {
   word: string;
@@ -27,24 +27,10 @@ const Vocabulary = () => {
 
     setLoading(true);
 
-    const options = {
-      method: "GET",
-      url: `https://wordsapiv1.p.rapidapi.com/words/${inputValue}/${selectedParameter}`,
-      headers: {
-        "X-RapidAPI-Key": "bcfdee6c9dmsh4e3903236f08f3ep1ec2e0jsn25dfcc1e60d7",
-        "X-RapidAPI-Host": "wordsapiv1.p.rapidapi.com",
-      },
-      withCredentials: true,
-    };
-
     setTimeout(async () => {
       try {
-        const response = await axios.request<SynonymAntonymResponse>(options);
-        if (response.data && response.data[selectedParameter]) {
-          setResult(response.data[selectedParameter] || []);
-        } else {
-          setResult([]);
-        }
+        const response = await makeRequest(inputValue, selectedParameter);
+        setResult(response);
       } catch (error) {
         console.error(error);
       } finally {
