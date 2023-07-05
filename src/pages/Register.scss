@@ -1,25 +1,18 @@
 .register-l-light {
   background-color: rgba(255, 255, 255, 1);
   display: flex;
-  width: 100vw; /* Use 100vw for full viewport width */
-  height: 100vh; /* Use 100vh for full viewport height */
-  margin: 0; /* Remove any default margin */
-  padding: 0; /* Remove any default padding */
-  overflow: hidden; /* Hide any content that exceeds the div */
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   flex-direction: row;
   justify-content: center;
-  width: 100%;
 }
 
 .register-l-light .div {
-  background: linear-gradient(
-    180deg,
-    rgb(17, 77, 146) 0%,
-    rgb(73, 148, 200) 100%
-  );
+  background: linear-gradient(180deg, rgb(17, 77, 146) 0%, rgb(73, 148, 200) 100%);
   background-color: rgba(255, 255, 255, 1);
   border: 1px none;
-  height: 1080px;
+  height: 100vh;
   position: relative;
   width: 1920px;
 }
@@ -30,17 +23,6 @@
   position: absolute;
   top: 104px;
   width: 1620px;
-}
-
-.register-l-light .form-bg {
-  background-color: #e7f1ff;
-  border-radius: 20px;
-  box-shadow: 4px 4px 10px #235284;
-  height: 871px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 1616px;
 }
 
 .register-l-light .left {
@@ -57,15 +39,6 @@
   position: absolute;
   top: 632px;
   width: 360px;
-}
-
-.register-l-light .overlap-group {
-  background-color: #3982b8;
-  border-radius: 60px;
-  box-shadow: 2px 2px 4px #00000040;
-  height: 60px;
-  position: relative;
-  width: 290px;
 }
 
 .register-l-light .text-wrapper {
@@ -90,35 +63,13 @@
   width: 401px;
 }
 
-.register-l-light .confirm-pass {
-  height: 58px;
-  left: -2px;
-  position: absolute;
-  top: 226px;
-  width: 408px;
-}
-
-.register-l-light .pass {
-  height: 58px;
-  left: -2px;
-  position: absolute;
-  top: 150px;
-  width: 408px;
-}
-
-.register-l-light .email {
-  height: 58px;
-  left: -2px;
-  position: absolute;
-  top: 74px;
-  width: 408px;
-}
-
+.register-l-light .confirm-pass,
+.register-l-light .pass,
+.register-l-light .email,
 .register-l-light .name {
   height: 58px;
-  left: -1px;
+  left: -2px;
   position: absolute;
-  top: -2px;
   width: 408px;
 }
 
@@ -247,38 +198,32 @@
 }
 
 .register-l-light .text-wrapper-2 {
-    /* Existing styles */
-  
-    /* Add these styles */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    white-space: nowrap;
-  }
-  
-  .register-l-light .text-wrapper-2::after {
-    /* Add these styles */
-    content: "";
-    display: block;
-    width: 100%;
-  }
-  
-  .register-l-light .text-wrapper-2 span {
-    /* Add these styles */
-    display: block;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.register-l-light .text-wrapper-2::after {
+  content: "";
+  display: block;
+  width: 100%;
+}
+
+.register-l-light .text-wrapper-2 span {
+  display: block;
+}
 
 .div {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
-  
+
 .w-full {
-    width: 100%;
+  width: 100%;
 }
 
 .mt-5 {
-    margin-top: 20px;
+  margin-top: 20px;
 }
-  
