@@ -8,11 +8,16 @@
   line-height: normal;
   color: #fff;
   border-radius: 50px;
-  padding: 15px 30px;
+  background-color: #235284;
   position: relative;
   cursor: pointer;
   transition: 0.25s;
   text-align: center;
+  transition: background-color 0.25s;
+
+  &:hover {
+    background-color: #075fbe;
+  }
 }
 
 .login {
@@ -47,8 +52,8 @@
 }
 
 .default-size {
-  width: 138px;
-  height: 51px;
+  width: 100px;
+  height: 41px;
 }
 
 .medium-size {

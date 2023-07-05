@@ -2,6 +2,7 @@ import { InputHTMLAttributes, FC } from "react";
 import "./Input.scss";
 import { VariantProps, cva } from "class-variance-authority";
 import { cn } from "../../../utils/cn";
+
 interface Input
   extends InputHTMLAttributes<HTMLInputElement>,
     VariantProps<typeof inputVariants> {}
