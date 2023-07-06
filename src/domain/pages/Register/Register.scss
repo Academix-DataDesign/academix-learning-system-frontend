@@ -3,7 +3,9 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     width: 100%;
+    height: 100vh;
   }
   
   .register-l-light .div {
@@ -14,16 +16,16 @@
     );
     background-color: rgba(255, 255, 255, 1);
     border: 1px none;
-    height: 1080px;
+    height: 100%;
     position: relative;
-    width: 1920px;
+    width: 100%;
   }
   
   .register-l-light .overlap {
     height: 871px;
-    left: 152px;
+    left: 530px;
     position: absolute;
-    top: 104px;
+    top: 180px;
     width: 1620px;
   }
   
@@ -162,7 +164,7 @@
   }
   
   .register-l-light .bg {
-    background-image: url(./pexels-maksim-romashkin-7108217-1.png);
+    background-image: url("../../../assets/background.jpg");
     background-position: 50% 50%;
     background-size: cover;
     height: 871px;
@@ -176,7 +178,7 @@
     background-color: #06111d80;
     border-radius: 0px 20px 20px 0px;
     height: 871px;
-    margin-top: -10px;
+    
     
   }
   
@@ -243,10 +245,11 @@
   
   .register-l-light .vector {
     height: 40px;
-    left: 1848px;
+    left: 2650px;
     position: absolute;
     top: 34px;
     width: 40px;
+    cursor: pointer;
   }
   
   .w-full {
