@@ -38,14 +38,8 @@
   width: 604px;
 }
 
-.log-in-light-mode .overlap-group {
-  height: 871px;
-  position: relative;
-  width: 600px;
-}
-
 .log-in-light-mode .bg {
-  background-image: url('../../../assets/background.jpg');
+  background-image: url("../../../assets/background.jpg");
   background-position: 50% 50%;
   background-size: cover;
   height: 871px;
@@ -71,8 +65,7 @@
 
 .log-in-light-mode .div-wrapper {
   background-color: #e7f1ff;
-  border: 4px solid;
-  border-color: #3982b8;
+  border: 4px solid #3982b8;
   border-radius: 60px;
   height: 60px;
   position: relative;
@@ -95,7 +88,7 @@
 }
 
 .log-in-light-mode .text-wrapper-2 {
-  color: #ffffff;
+  color: #fff;
   font-family: "Roboto-Regular", Helvetica;
   font-size: 20px;
   font-weight: 400;
@@ -109,7 +102,7 @@
 }
 
 .log-in-light-mode .h-1 {
-  color: #ffffff;
+  color: #fff;
   font-family: "Roboto-Bold", Helvetica;
   font-size: 76px;
   font-weight: 700;
@@ -148,7 +141,7 @@
 }
 
 .log-in-light-mode .text-wrapper-3 {
-  color: #ffffff;
+  color: #fff;
   font-family: "Roboto-Bold", Helvetica;
   font-size: 24px;
   font-weight: 700;
@@ -215,8 +208,4 @@
   top: 34px;
   width: 40px;
   cursor: pointer;
-}
-.w-full {
-    width: 100%;
-
 }
