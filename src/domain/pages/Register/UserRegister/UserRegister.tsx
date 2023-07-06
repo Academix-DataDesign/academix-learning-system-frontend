@@ -1,5 +1,5 @@
-import { Button } from "../../UI/Button/Button";
-import Input from "../../UI/Input/Input";
+import { Button } from "../../../UI/Button/Button";
+import Input from "../../../UI/Input/Input";
 import "./Register.scss";
 
 export const UserRegister = () => {
