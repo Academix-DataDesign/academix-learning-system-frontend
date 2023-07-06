@@ -40,8 +40,9 @@
 .register2 {
   background-color: #ffffff;
   color: #3982b8;
-  border: 1px solid;
+  border: 3px solid;
   border-color: #3982b8;
+  font-weight: 700;
 }
 
 .small-size {
@@ -54,6 +55,7 @@
 .default-size {
   width: 100px;
   height: 41px;
+  font-size: 20px;
 }
 
 .medium-size {
