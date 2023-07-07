@@ -5,12 +5,6 @@ import Button from "../../UI/Button/Button";
 import Spinner from "../../UI/Spinner/Spinner";
 import makeRequest from "../../../utils/word-api";
 
-interface SynonymAntonymResponse {
-  word: string;
-  synonyms?: string[];
-  antonyms?: string[];
-}
-
 type ParameterOption = "synonyms" | "antonyms";
 
 const Vocabulary = () => {
@@ -35,7 +29,6 @@ const Vocabulary = () => {
         console.error(error);
       } finally {
         setLoading(false);
-        setInputValue("");
       }
     }, 500);
   };
