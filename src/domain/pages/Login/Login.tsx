@@ -1,8 +1,10 @@
 import { Button } from "../../UI/Button/Button";
 import Input from "../../UI/Input/Input";
+import { useNavigate } from "react-router-dom";
 import "./Login.scss";
 
 export const Login = () => {
+  const navigate = useNavigate();
   return (
     <div className="log-in-light-mode">
       <div className="div">
@@ -15,7 +17,7 @@ export const Login = () => {
               <div className="BTN">
                 <Button variant={"register2"} className="text-wrapper">Register</Button>
               </div>
-              <div className="text-wrapper-2">Not joined? Register now.</div>
+              <div className="text-wrapper-2">Not joined? <span className="blue" onClick={() => navigate('/register-user')}>Register now.</span></div>
               <h1 className="h-1">Welcome back</h1>
             </div>
           </div>
@@ -29,7 +31,7 @@ export const Login = () => {
             <div className="text-wrapper-5">Log In</div>
           </div>
         </div>
-        <div className="vector">
+        <div className="vector" onClick={() => navigate('/')}>
           <svg
             width="41"
             height="41"

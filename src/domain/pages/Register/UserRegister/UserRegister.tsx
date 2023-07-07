@@ -1,8 +1,12 @@
 import { Button } from "../../../UI/Button/Button";
 import Input from "../../../UI/Input/Input";
+import { useNavigate } from "react-router-dom";
 import "./UserRegister.scss";
 
 export const UserRegister = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="register-l-light">
       <div className="div">
@@ -75,7 +79,7 @@ export const UserRegister = () => {
             </div>
           </div>
         </div>
-        <div className="vector">
+        <div className="vector" onClick={()=> navigate('/')}>
           <svg
             width="41"
             height="41"
