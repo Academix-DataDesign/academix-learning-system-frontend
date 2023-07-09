@@ -18,9 +18,13 @@ const inputVariants = cva("input", {
   },
 });
 
-const Input: FC<Input> = ({ className, variant, ...props }) => {
+const Input: FC<Input> = ({ className, variant, type, ...props }) => {
   return (
-    <input {...props} className={cn(inputVariants({ variant, className }))} />
+    <input
+      {...props}
+      className={cn(inputVariants({ variant, className }))}
+      type={type}
+    />
   );
 };
 

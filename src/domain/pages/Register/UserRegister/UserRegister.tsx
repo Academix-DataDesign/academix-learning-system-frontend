@@ -1,12 +1,31 @@
-import { Button } from "../../../UI/Button/Button";
-import Input from "../../../UI/Input/Input";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./UserRegister.scss";
 import { AiOutlineClose } from "react-icons/ai";
 import PersonIcon from "../../../UI/PersonIcon/PersonIcon";
+import { Button } from "../../../UI/Button/Button";
+import Input from "../../../UI/Input/Input";
+import "./UserRegister.scss";
+import { register } from "../../../../apis/auth";
 
-export const UserRegister = () => {
+const UserRegister = () => {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const response = await register(formData);
+      console.log(response);
+      navigate("/");
+    } catch (error) {
+      alert(error);
+    }
+  };
 
   return (
     <div className="register-l-light">
@@ -16,14 +35,56 @@ export const UserRegister = () => {
           <div className="left">
             <PersonIcon role="learner" />
             <div className="text-wrapper-2 caa-text">Create an account</div>
-            <form action="" className="form">
-              <Input className="name" placeholder="Name" />
+            <form className="form" onSubmit={handleSubmit}>
+              <Input
+                className="name"
+                placeholder="Name"
+                defaultValue={formData.name}
+                onChange={(e) =>
+                  setFormData((prevData) => ({
+                    ...prevData,
+                    name: e.target.value,
+                  }))
+                }
+              />
               <br />
-              <Input className="email" placeholder="Email" />
+              <Input
+                className="email"
+                placeholder="Email"
+                defaultValue={formData.email}
+                onChange={(e) =>
+                  setFormData((prevData) => ({
+                    ...prevData,
+                    email: e.target.value,
+                  }))
+                }
+              />
               <br />
-              <Input className="password" placeholder="Password" />
+              <Input
+                className="password"
+                type="password"
+                placeholder="Password"
+                defaultValue={formData.password}
+                onChange={(e) =>
+                  setFormData((prevData) => ({
+                    ...prevData,
+                    password: e.target.value,
+                  }))
+                }
+              />
               <br />
-              <Input className="confirm-pass" placeholder="Confirm password" />
+              <Input
+                className="confirm-pass"
+                type="password"
+                placeholder="Confirm password"
+                defaultValue={formData.confirmPassword}
+                onChange={(e) =>
+                  setFormData((prevData) => ({
+                    ...prevData,
+                    confirmPassword: e.target.value,
+                  }))
+                }
+              />
               <br />
               <Button
                 variant={"login"}
