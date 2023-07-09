@@ -10,7 +10,7 @@ const Show = () => {
       <Button variant="register">Register</Button>
       <Button variant="register2">Register</Button> */}
       <a style={{ color: "#000" }} href="/register-learner">
-        ovdje klikni da bi vidio završeno
+        ovdje klikni
       </a>
     </>
   );
