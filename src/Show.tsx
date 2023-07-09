@@ -1,6 +1,3 @@
-import Input from "./domain/UI/Input/Input";
-import { Button } from "./domain/UI/Button/Button";
-
 const Show = () => {
   return (
     <>
@@ -13,7 +10,6 @@ const Show = () => {
       <Button variant="register">Register</Button>
       <Button variant="register2">Register</Button> */}
       <a style={{ color: "#000" }} href="/register-learner">
-        {" "}
         ovdje klikni da bi vidio završeno
       </a>
     </>
