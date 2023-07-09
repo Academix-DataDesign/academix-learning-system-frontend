@@ -1,6 +1,6 @@
 import { Button } from "../../../UI/Button/Button";
 import { Link } from "react-router-dom";
-import "./LoginSelect.scss";
+import "./RegisterSelect.scss";
 
 const RegisterSelect = () => {
     

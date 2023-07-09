@@ -7,7 +7,7 @@ import UserRegister from "./domain/pages/Register/UserRegister/UserRegister";
 import InstructorRegister from "./domain/pages/Register/InstructorRegister/InstructorRegister";
 import Login from "./domain/pages/Login/Login";
 import Home from "./domain/pages/Home/Home";
-import RegisterSelect from "./domain/pages/Login/LoginSelect/LoginSelect";
+import RegisterSelect from "./domain/pages/Register/RegisterSelect/RegisterSelect";
 
 function App() {
   return (
