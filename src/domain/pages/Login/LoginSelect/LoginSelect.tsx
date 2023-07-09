@@ -1,7 +1,9 @@
 import { Button } from "../../../UI/Button/Button";
+import { Link } from "react-router-dom";
 import "./LoginSelect.scss";
 
 const LoginSelect = () => {
+    
   return (
     <div className="login-select-container">
       <div className="overlap-wrapper">
@@ -13,6 +15,7 @@ const LoginSelect = () => {
               src="https://anima-uploads.s3.amazonaws.com/projects/649474d8048a6087ab20c40b/releases/6495c491a1b0005e5700e644/img/instructor@2x.png"
             />
             <div className="instructor-btn">
+                <Link to="/register-instructor">
               <Button
                 style={{ height: "50px" }}
                 variant={"login2"}
@@ -20,6 +23,7 @@ const LoginSelect = () => {
               >
                 Instructor
               </Button>
+              </Link>
             </div>
           </div>
           <div className="learner">
@@ -29,6 +33,7 @@ const LoginSelect = () => {
               src="https://anima-uploads.s3.amazonaws.com/projects/649474d8048a6087ab20c40b/releases/6495c491a1b0005e5700e644/img/learner@2x.png"
             />
             <div className="learner-btn">
+                <Link to='/register-user'>
               <Button
                 style={{ height: "50px" }}
                 variant={"login2"}
@@ -36,9 +41,11 @@ const LoginSelect = () => {
               >
                 Learner
               </Button>
+              </Link>
             </div>
           </div>
           <h1 className="heading">Who are you?</h1>
+          <Link to='/'>
           <div className="back-btn">
             <svg
               className="back-icon"
@@ -60,6 +67,7 @@ const LoginSelect = () => {
 
             <div className="back-text">Go back</div>
           </div>
+          </Link>
         </div>
       </div>
     </div>
