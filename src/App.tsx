@@ -8,6 +8,7 @@ import InstructorRegister from "./domain/pages/Register/InstructorRegister/Instr
 import Login from "./domain/pages/Login/Login";
 import Home from "./domain/pages/Home/Home";
 import RegisterSelect from "./domain/pages/Register/RegisterSelect/RegisterSelect";
+import ForgotPassword from "./domain/pages/ForgetPassword/ForgetPassword";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/login-select" element={<RegisterSelect />} />
           <Route path="/register-user" element={<UserRegister />} />
           <Route path="/register-instructor" element={<InstructorRegister />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/home" element={<Home />} />
           <Route path="/vocabulary" element={<Vocabulary />} />
         </Routes>
