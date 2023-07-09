@@ -1,4 +1,4 @@
-import Button from "../..//UI/Button/Button";
+import { Button } from "../..//UI/Button/Button";
 import Input from "../../UI/Input/Input";
 import "./Register.scss";
 

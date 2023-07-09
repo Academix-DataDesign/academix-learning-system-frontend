@@ -1,0 +1,204 @@
+.register-i-light {
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.register-i-light .div {
+  background: linear-gradient(
+    180deg,
+    rgb(17, 77, 146) 0%,
+    rgb(73, 148, 200) 100%
+  );
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px none;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+}
+
+.register-i-light .overlap {
+  height: 871px;
+  left: 550px;
+  position: absolute;
+  top: 160px;
+  width: 1620px;
+}
+
+.register-i-light .form-bg {
+  background-color: #e7f1ff;
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px #235284;
+  height: 871px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1616px;
+}
+
+.register-i-light .left {
+  height: 698px;
+  left: 50px;
+  position: absolute;
+  top: 45px;
+  width: 640px;
+}
+
+.register-i-light .BTN {
+  height: 68px;
+  left: 281px;
+  position: absolute;
+  top: 636px;
+  width: 298px;
+  margin-top: 15px;
+}
+
+.register-i-light .form {
+  height: 285px;
+  left: 218px;
+  position: absolute;
+  top: 305px;
+  width: 420px;
+}
+
+.register-i-light .drop {
+  height: 152px;
+  left: -2px;
+  position: absolute;
+  top: 139px;
+  width: 428px;
+}
+
+.register-i-light .confirm-pass {
+  height: 58px;
+  left: 218px;
+  position: absolute;
+  top: 63px;
+  width: 208px;
+}
+
+.register-i-light .pass {
+  height: 58px;
+  left: -2px;
+  position: absolute;
+  top: 63px;
+  width: 208px;
+}
+
+.register-i-light .email {
+  height: 58px;
+  left: 218px;
+  position: absolute;
+  top: -2px;
+  width: 208px;
+}
+
+.register-i-light .name {
+  height: 58px;
+  left: -2px;
+  position: absolute;
+  top: -2px;
+  width: 208px;
+}
+
+.register-i-light .text-wrapper {
+  color: #3982b8;
+  font-family: "Roboto-Bold", Helvetica;
+  font-size: 64px;
+  font-weight: 700;
+  left: 287px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 107px;
+  width: 282px;
+}
+
+.register-i-light .instructor {
+  height: 70px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 70px;
+}
+
+.register-i-light .right {
+  height: 871px;
+  left: 1016px;
+  position: absolute;
+  top: 0;
+  width: 604px;
+}
+
+.register-i-light .overlap-group {
+  height: 871px;
+  position: relative;
+  width: 600px;
+}
+
+.register-i-light .bg {
+  background-image: url('../../../../assets/background.jpg');
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 871px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 600px;
+}
+
+.register-i-light .rectangle {
+  background-color: #06111d80;
+  border-radius: 0px 20px 20px 0px;
+  height: 871px;
+}
+
+.register-i-light .img {
+  height: 60px;
+  left: 135px;
+  position: absolute;
+  top: 613px;
+  width: 320px;
+  margin-top: 10px;
+}
+
+.register-i-light .text-wrapper-2 {
+  color: #ffffff;
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 190px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 571px;
+  white-space: nowrap;
+  width: 240px;
+}
+
+.register-i-light .h-1 {
+  color: #ffffff;
+  font-family: "Roboto-Bold", Helvetica;
+  font-size: 76px;
+  font-weight: 700;
+  left: 135px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 223px;
+  width: 331px;
+}
+
+.register-i-light .vector {
+  height: 40px;
+  left: 2650px;
+  position: absolute;
+  top: 34px;
+  width: 40px;
+  cursor: pointer;
+}
