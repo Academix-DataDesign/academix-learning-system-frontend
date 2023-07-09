@@ -1,0 +1,166 @@
+.login-select-container {
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.login-select-container .overlap-wrapper {
+  background: linear-gradient(180deg, rgb(17, 77, 146) 15.1%, rgb(73, 148, 200) 100%);
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px none;
+  height: 1080px;
+  width: 1920px;
+}
+
+.login-select-container .overlap {
+  background-color: #e7f1ff;
+  border-radius: 20px;
+  box-shadow: 4px 4px 10px #235284;
+  height: 871px;
+  left: 152px;
+  position: relative;
+  top: 127px;
+  width: 1616px;
+}
+
+.login-select-container .instructor {
+  background-color: #b8e2f4;
+  border: 3px solid;
+  border-color: #114d92;
+  border-radius: 10px;
+  height: 350px;
+  left: 449px;
+  position: absolute;
+  top: 328px;
+  width: 250px;
+}
+
+.login-select-container .instructor-img {
+  height: 170px;
+  left: 46px;
+  object-fit: cover;
+  position: absolute;
+  top: 56px;
+  width: 152px;
+}
+
+.login-select-container .instructor-btn {
+  height: 40px;
+  left: -15px;
+  position: absolute;
+  top: 264px;
+  width: 172px;
+}
+
+.login-select-container .overlap-group {
+  background-color: #114d92;
+  border-radius: 30px;
+  height: 40px;
+  position: relative;
+  width: 170px;
+}
+
+.login-select-container .instructor-text-wrapper {
+  color: #ffffff;
+  font-family: "Roboto", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 42px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 9px;
+  white-space: nowrap;
+}
+
+.login-select-container .learner {
+  background-color: #b8e2f4;
+  border: 3px solid;
+  border-color: #114d92;
+  border-radius: 10px;
+  height: 350px;
+  left: 917px;
+  position: absolute;
+  top: 328px;
+  width: 250px;
+}
+
+.login-select-container .learner-img {
+  height: 181px;
+  left: 41px;
+  object-fit: cover;
+  position: absolute;
+  top: 51px;
+  width: 162px;
+}
+
+.login-select-container .learner-btn {
+  height: 40px;
+  left: -25px;
+  position: absolute;
+  top: 264px;
+  width: 172px;
+}
+
+.login-select-container .learner-text {
+  color: #ffffff;
+  font-family: "Roboto", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 51px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 9px;
+  white-space: nowrap;
+}
+
+.login-select-container .heading {
+  color: #3982b8;
+  font-family: "Roboto", Helvetica;
+  font-size: 64px;
+  font-weight: 700;
+  left: 610px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 124px;
+  white-space: nowrap;
+  width: 397px;
+}
+
+.login-select-container .back-btn {
+  height: 50px;
+  left: 65px;
+  position: absolute;
+  top: 70px;
+  width: 125px;
+  cursor: pointer;
+}
+
+.login-select-container .back-icon {
+  height: 50px !important;
+  left: -10px !important;
+  position: absolute !important;
+  top: 0 !important;
+  width: 50px !important;
+}
+
+.login-select-container .back-text {
+  color: #3982b8;
+  font-family: "Roboto", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 50px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 14px;
+  white-space: nowrap;
+}
