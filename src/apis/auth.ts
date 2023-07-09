@@ -1,4 +1,5 @@
 import axios from "axios";
+const url = import.meta.env.VITE_REACT_API_URL
 
 export const register = async (formData: any) => {
     const requestBody = {
@@ -6,10 +7,11 @@ export const register = async (formData: any) => {
         email: formData.email,
         password: formData.password,
     };
+
     const response = await axios.post(
-        "https://api.academix.me/api/v1/register",
+        url,
         requestBody
     );
 
     return response.data;
-} 
+};
