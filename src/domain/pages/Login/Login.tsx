@@ -9,6 +9,7 @@ import "./Login.scss";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,10 +21,17 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await login(formData);
-      console.log(response);
-      // navigate("/");
-    } catch (error) {
-      alert(error);
+      const { token } = response;
+
+      localStorage.setItem("api_token", token);
+
+      navigate("/");
+    } catch (error: any) {
+      if (error.response && error.response.data) {
+        setError(error.response.data.message);
+      } else {
+        console.log(error);
+      }
     }
   };
 
@@ -52,8 +60,10 @@ const Login = () => {
           </div>
           <div className="l-left">
             <div className="text-wrapper-2 caa-text">Log In</div>
+            <p className="error">{error}</p>
             <form className="form" onSubmit={handleSubmit}>
               <Input
+                required
                 className="email"
                 placeholder="Email"
                 defaultValue={formData.email}
@@ -66,6 +76,7 @@ const Login = () => {
               />
               <br />
               <Input
+                required
                 className="password"
                 type="password"
                 placeholder="Password"

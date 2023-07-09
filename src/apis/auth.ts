@@ -22,10 +22,11 @@ export const login = async (formData: any) => {
         password: formData.password,
     };
 
-
     const response = await axios.post(
-        url + '/api/v1/login',
-        requestBody, { withCredentials: true });
+        "http://127.0.0.1:8000/api/v1/login",
+        requestBody,
+        { withCredentials: true }
+    );
 
     return response.data;
-}
+};
