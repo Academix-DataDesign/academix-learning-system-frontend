@@ -9,9 +9,11 @@ const Show = () => {
       <Button variant="login">Log In</Button>
       <Button variant="register">Register</Button>
       <Button variant="register2">Register</Button> */}
-      <a style={{ color: "#000" }} href="/register-learner">
-        ovdje klikni
-      </a>
+      <h1>
+        <a style={{ color: "#000" }} href="/register-learner">
+          Register learner
+        </a>
+      </h1>
     </>
   );
 };

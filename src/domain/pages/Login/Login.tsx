@@ -1,52 +1,100 @@
-import { Button } from "../../UI/Button/Button";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AiOutlineClose } from "react-icons/ai";
 import Input from "../../UI/Input/Input";
-import { useNavigate } from "react-router-dom";
+import { Button } from "../../UI/Button/Button";
+import "./Login.scss";
+import { login } from "../../../apis/auth";
 import "./Login.scss";
 
-export const Login = () => {
+const Login = () => {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const response = await login(formData);
+      console.log(response);
+      // navigate("/");
+    } catch (error) {
+      alert(error);
+    }
+  };
+
   return (
-    <div className="log-in-light-mode">
-      <div className="div">
+    <div className="register-l-light">
+      <div className="background">
         <div className="overlap">
-          <div className="left">
-            <div className="overlap-group">
-              <div className="bg">
-                <div className="rectangle" />
+          <div className="form-bg" />
+          <div className="l-right">
+            <div className="bg">
+              <div className="overlap-2">
+                <div className="bg">
+                  <div className="rectangle" />
+                </div>
+                <div className="overlap-group-wrapper">
+                  <h1 className="h-1 wb-text">
+                    Welcome <br /> back
+                  </h1>
+                </div>
+                <div className="text-wrapper-4">
+                  Not registered yet?&nbsp;
+                  <Link to="/register-learner">Register now</Link>
+                </div>
               </div>
-              <div className="BTN">
-                <Button variant={"register2"} className="text-wrapper">Register</Button>
-              </div>
-              <div className="text-wrapper-2">Not joined? <span className="blue" onClick={() => navigate('/register-user')}>Register now.</span></div>
-              <h1 className="h-1">Welcome back</h1>
             </div>
           </div>
-          <div className="right">
-            <div className="overlap-group-wrapper">
-              <Button variant={"login2"} className="text-wrapper-3" style={{width: '320px',height: '60px'}}>Log In</Button>
-            </div>
-            <div className="text-wrapper-4">Forgot your password?</div>
-            <Input className="pass" placeholder="Password" />
-            <Input className="email" placeholder="Email" />
-            <div className="text-wrapper-5">Log In</div>
+          <div className="l-left">
+            <div className="text-wrapper-2 caa-text">Log In</div>
+            <form className="form" onSubmit={handleSubmit}>
+              <Input
+                className="email"
+                placeholder="Email"
+                defaultValue={formData.email}
+                onChange={(e) =>
+                  setFormData((prevData) => ({
+                    ...prevData,
+                    email: e.target.value,
+                  }))
+                }
+              />
+              <br />
+              <Input
+                className="password"
+                type="password"
+                placeholder="Password"
+                defaultValue={formData.password}
+                onChange={(e) =>
+                  setFormData((prevData) => ({
+                    ...prevData,
+                    password: e.target.value,
+                  }))
+                }
+              />
+              <br />
+              <Link to="/forgot-password" className="fyp-text">
+                Forgot your password?
+              </Link>
+              <br />
+              <Button
+                variant={"login"}
+                size={"medium"}
+                style={{ width: "300px" }}
+                className="text-wrapper"
+              >
+                Log In
+              </Button>
+            </form>
           </div>
         </div>
-        <div className="vector" onClick={() => navigate('/')}>
-          <svg
-            width="41"
-            height="41"
-            viewBox="0 0 41 41"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M3 38L20.5 20.5L38 38M38 3L20.4967 20.5L3 3"
-              stroke="white"
-              stroke-width="5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+        <div className="vector" onClick={() => navigate("/")}>
+          <AiOutlineClose />
         </div>
       </div>
     </div>

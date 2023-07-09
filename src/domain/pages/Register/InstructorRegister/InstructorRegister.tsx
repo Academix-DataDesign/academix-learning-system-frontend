@@ -116,7 +116,7 @@ const InstructorRegister = () => {
                   </h1>
                 </div>
                 <div className="text-wrapper-4">
-                  Already have an account?
+                  Already have an account?&nbsp;
                   <Link to="/login">Log In</Link>
                 </div>
               </div>
