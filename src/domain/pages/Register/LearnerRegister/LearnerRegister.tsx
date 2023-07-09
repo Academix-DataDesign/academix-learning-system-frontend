@@ -4,10 +4,10 @@ import { AiOutlineClose } from "react-icons/ai";
 import PersonIcon from "../../../UI/PersonIcon/PersonIcon";
 import { Button } from "../../../UI/Button/Button";
 import Input from "../../../UI/Input/Input";
-import "./UserRegister.scss";
+import "./LearnerRegister.scss";
 import { register } from "../../../../apis/auth";
 
-const UserRegister = () => {
+const LearnerRegister = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
@@ -33,7 +33,9 @@ const UserRegister = () => {
         <div className="overlap">
           <div className="form-bg" />
           <div className="left">
-            <PersonIcon role="learner" />
+            <Link to="/register-instructor">
+              <PersonIcon role="learner" />
+            </Link>
             <div className="text-wrapper-2 caa-text">Create an account</div>
             <form className="form" onSubmit={handleSubmit}>
               <Input
@@ -123,4 +125,4 @@ const UserRegister = () => {
   );
 };
 
-export default UserRegister;
+export default LearnerRegister;

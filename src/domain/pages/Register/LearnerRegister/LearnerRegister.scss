@@ -1,0 +1,144 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: #fff;
+
+  svg {
+    scale: 1;
+    transition: scale 0.25s ease;
+
+    &:hover {
+      scale: 1.10;
+    }
+  }
+}
+
+.background {
+  background: linear-gradient(48deg, #114D92 0%, #4994C8 100%);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlap {
+  border-radius: 20px;
+  background: #E7F1FF;
+  box-shadow: 4px 4px 10px 0px #235284;
+}
+
+.vector {
+  cursor: pointer;
+  font-size: 40px;
+  position: absolute;
+  top: 2%;
+  color: #fff;
+  right: 2%;
+  transition: color 0.25s ease-out;
+
+  &:hover {
+    color: #235284 !important;
+  }
+}
+
+.overlap {
+  display: flex;
+  height: 70%;
+  width: 90%;
+
+
+  .left {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background: #E7F1FF;
+    box-shadow: 4px 4px 10px 0px #235284;
+    flex: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    svg {
+      position: absolute;
+      top: 16%;
+      left: 6%;
+    }
+
+    .caa-text {
+      text-align: center;
+      color: #3982B8;
+      text-align: center;
+      font-size: 3rem;
+      font-family: "Roboto-Bold", Helvetica;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin-bottom: 5%;
+    }
+
+    .form {
+      input {
+        width: 500px;
+        margin-top: 30px;
+      }
+
+      .confirm-pass {
+        margin-bottom: 10%;
+      }
+    }
+
+  }
+
+  .right {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-radius: 0px 20px 20px 0px;
+    background: url("../../../../assets/Untitled.jpeg") 50% / cover no-repeat;
+    flex: 40%;
+
+    .overlap-2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 15rem;
+
+
+      .h-1.wb-text {
+        margin-bottom: 20%;
+        color: #fff;
+        text-align: center;
+        font-family: "Roboto-Bold", Helvetica;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin-top: 20px;
+        font-size: 4rem;
+      }
+
+      .text-wrapper-4 {
+        text-align: center;
+        color: #fff;
+        margin-top: 10px;
+        font-size: 1.5rem;
+      }
+    }
+
+    .text-wrapper-3 {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+
+  * {
+    display: none;
+  }
+}
