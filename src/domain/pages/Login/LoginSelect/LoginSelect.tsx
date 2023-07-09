@@ -2,7 +2,7 @@ import { Button } from "../../../UI/Button/Button";
 import { Link } from "react-router-dom";
 import "./LoginSelect.scss";
 
-const LoginSelect = () => {
+const RegisterSelect = () => {
     
   return (
     <div className="login-select-container">
@@ -74,4 +74,4 @@ const LoginSelect = () => {
   );
 };
 
-export default LoginSelect;
+export default RegisterSelect;
