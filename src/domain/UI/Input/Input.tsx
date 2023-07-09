@@ -10,11 +10,11 @@ interface Input
 const inputVariants = cva("input", {
   variants: {
     variant: {
-      defaul: "default",
+      default: "default",
     },
   },
   defaultVariants: {
-    variant: "defaul",
+    variant: "default",
   },
 });
 

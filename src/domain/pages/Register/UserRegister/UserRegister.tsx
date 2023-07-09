@@ -1,34 +1,18 @@
 import { Button } from "../../../UI/Button/Button";
 import Input from "../../../UI/Input/Input";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./UserRegister.scss";
+import { AiOutlineClose } from "react-icons/ai";
 
 export const UserRegister = () => {
-
   const navigate = useNavigate();
 
   return (
     <div className="register-l-light">
-      <div className="div">
+      <div className="background">
         <div className="overlap">
           <div className="form-bg" />
           <div className="left">
-            <div className="BTN">
-              <Button
-                variant={"login"}
-                size={"medium"}
-                className="text-wrapper w-full"
-              >
-                Register
-              </Button>
-            </div>
-            <div className="form">
-              <Input className="confirm-pass" placeholder="Confirm password" />
-              <Input className="pass" placeholder="Password" />
-              <Input className="email" placeholder="Email" />
-              <Input className="name" placeholder="Name" />
-            </div>
-            <div className="text-wrapper-2">Create an account</div>
             <svg
               width="100"
               height="100"
@@ -58,29 +42,57 @@ export const UserRegister = () => {
                 />
               </defs>
             </svg>
+            <div className="text-wrapper-2 caa-text">Create an account</div>
+            <div className="form">
+              <Input className="name" placeholder="Name" />
+              <br />
+              <Input className="email" placeholder="Email" />
+              <br />
+              <Input className="password" placeholder="Password" />
+              <br />
+              <Input className="confirm-pass" placeholder="Confirm password" />
+            </div>
+            <div className="BTN">
+              <Button
+                variant={"login"}
+                size={"medium"}
+                style={{ width: "300px" }}
+                className="text-wrapper"
+              >
+                Register
+              </Button>
+            </div>
           </div>
           <div className="right">
-            <div className="overlap-2">
-              <div className="bg">
-                <div className="rectangle" />
-              </div>
-              <div className="overlap-group-wrapper">
-                <Button
-                  style={{ width: "200px", color: "white" }}
+            <div className="bg">
+              <div className="overlap-2">
+                <div className="bg">
+                  <div className="rectangle" />
+                </div>
+                <div className="overlap-group-wrapper">
+                  <h1 className="h-1 wb-text">
+                    Welcome <br /> back
+                  </h1>
+                </div>
+                <div className="text-wrapper-4">
+                  Not joined?
+                  <Link to="/register">Register now.</Link>
+                </div>
+                {/* <Button
+                  style={{ width: "300px", color: "#3982B8" }}
                   size={"medium"}
-                  variant={"login"}
+                  variant={"register2"}
                   className="text-wrapper-3 w-full"
                 >
                   Register
-                </Button>
+                </Button> */}
               </div>
-              <div className="text-wrapper-4">Not joined? Register now.</div>
-              <h1 className="h-1">Welcome back</h1>
             </div>
           </div>
         </div>
-        <div className="vector" onClick={()=> navigate('/')}>
-          <svg
+        <div className="vector" onClick={() => navigate("/")}>
+          <AiOutlineClose />
+          {/* <svg
             width="41"
             height="41"
             viewBox="0 0 41 41"
@@ -94,7 +106,7 @@ export const UserRegister = () => {
               stroke-linecap="round"
               stroke-linejoin="round"
             />
-          </svg>
+          </svg> */}
         </div>
       </div>
     </div>

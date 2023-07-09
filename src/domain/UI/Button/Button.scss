@@ -13,10 +13,11 @@
   cursor: pointer;
   transition: 0.25s;
   text-align: center;
-  transition: background-color 0.25s;
+  transition: background-color 0.25s ease-out;
 
   &:hover {
     background-color: #075fbe;
+    color: #fff !important;
   }
 }
 

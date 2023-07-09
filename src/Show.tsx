@@ -1,5 +1,5 @@
 import Input from "./domain/UI/Input/Input";
-import Button from "./domain/UI/Button/Button";
+import { Button } from "./domain/UI/Button/Button";
 
 const Show = () => {
   return (
