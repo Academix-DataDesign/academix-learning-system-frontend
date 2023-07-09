@@ -1,5 +1,6 @@
 import { Button } from "../../UI/Button/Button";
 import Input from "../../UI/Input/Input";
+import { Link } from "react-router-dom";
 import "./ForgotPassword.scss";
 
 const ForgotPassword = () => {
@@ -9,8 +10,12 @@ const ForgotPassword = () => {
         <div className="overlap-group">
           <div className="bg" />
           <div className="inner-container">
-            <div className="back-button">Back to Log In</div>
-            <Button variant={"login2"} className="submit-button">Submit</Button>
+            <Link to="/login">
+              <div className="back-button">Back to Log In</div>
+            </Link>
+            <Button variant={"login2"} className="submit-button">
+              Submit
+            </Button>
             <Input placeholder="Email" className="email-input"></Input>
             <svg
               className="image"
@@ -49,31 +54,32 @@ const ForgotPassword = () => {
             <div className="heading">Forgot password</div>
           </div>
         </div>
-
-        <svg
-          className="vector-icon"
-          style={{
-            height: "40px",
-            left: "1848px",
-            position: "absolute",
-            top: "34px",
-            width: "40px",
-          }}
-          fill="none"
-          height="41"
-          viewBox="0 0 41 41"
-          width="41"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            className="path"
-            d="M3 38L20.5 20.5L38 38M38 3L20.4967 20.5L3 3"
-            stroke="white"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="5"
-          />
-        </svg>
+        <Link to="/login">
+          <svg
+            className="vector-icon"
+            style={{
+              height: "40px",
+              left: "1848px",
+              position: "absolute",
+              top: "34px",
+              width: "40px",
+            }}
+            fill="none"
+            height="41"
+            viewBox="0 0 41 41"
+            width="41"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              className="path"
+              d="M3 38L20.5 20.5L38 38M38 3L20.4967 20.5L3 3"
+              stroke="white"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="5"
+            />
+          </svg>
+        </Link>
       </div>
     </div>
   );
