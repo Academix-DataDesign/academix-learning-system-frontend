@@ -1,0 +1,45 @@
+.left {
+    position: relative;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    .backIcon {
+        position: absolute;
+        top: 2%;
+        left: 2%;
+    }
+}
+
+.way-text {
+    position: absolute;
+    top: 13%;
+    color: #235284;
+    text-align: center;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 3.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.group {
+    .option {
+        border-radius: 10px;
+        border: 3px solid #235284;
+        background: #b8e2f4;
+        padding: 20% 15%;
+        display: flex;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30%;
+
+    button {
+        text-align: center !important;
+    }
+}
