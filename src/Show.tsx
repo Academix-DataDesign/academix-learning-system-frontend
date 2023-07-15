@@ -1,6 +1,14 @@
 import Slider from "./domain/UI/Slider/Slider";
 import { Button } from "./domain/UI/Button/Button";
 import Input from "./domain/UI/Input/Input";
+import Switch from "./domain/UI/Switch/Switch";
+import Breadcrumbs from "./domain/UI/Breadcrumbs/Breadcrumbs";
+import Burger from "./domain/UI/Burger/Burger";
+import Tabs from "./domain/UI/Tabs/Tabs";
+import Dialog from "./domain/UI/Dialog/Dialog";
+import Blockquote from "./domain/UI/Blockquote/Blockquote";
+import Dropzone from "./domain/UI/Dropzone/Dropzone";
+
 const Show = () => {
   return (
     <>
@@ -9,14 +17,28 @@ const Show = () => {
       <br />
       {/* <Input variant="defaul" placeholder="Email" /> */}
       <Slider />
-      <Button variant="login">Log In</Button>
+      <br />
+      <Switch label="Some label" />
+      <br />
+      <Breadcrumbs />
+      <br />
+      <Burger />
+      <br />
+      <Tabs />
+      <br />
+      <Dialog />
+      <br />
+      <Blockquote />
+      <br />
+      <Dropzone />
+      {/* <Button variant="login">Log In</Button>
       <Button variant="register">Register</Button>
       <Button variant="register2">Register</Button>
       <h1>
         <a style={{ color: "#000" }} href="/register-learner">
           Register learner
         </a>
-      </h1>
+      </h1> */}
     </>
   );
 };

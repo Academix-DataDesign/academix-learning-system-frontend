@@ -1,0 +1,18 @@
+button {
+    padding: 0.5% !important;
+
+    &:hover {
+        padding: 0.5% !important;
+        // background-color: #333 !important;
+        background-color: transparent !important;
+    }
+}
+
+.class span {
+    color: #fff;
+    transition: opacity 0.25s ease-out;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}

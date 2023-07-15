@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@mantine/core": "^6.0.16",
+    "@mantine/dropzone": "^6.0.16",
+    "@tabler/icons-react": "^2.25.0",
     "axios": "^1.4.0",
     "class-variance-authority": "^0.6.1",
     "clsx": "^1.2.1",

@@ -1,0 +1,13 @@
+.btn-newsletter {
+    transition: background-color 0.25s ease-in;
+
+    &:hover {
+        background-color: #000 !important;
+    }
+
+    span {
+        padding: 20px;
+        color: #fff;
+        z-index: 11 !important;
+    }
+}

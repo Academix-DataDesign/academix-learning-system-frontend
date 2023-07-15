@@ -1,0 +1,9 @@
+.anchor {
+    color: #fff;
+    text-decoration: none !important;
+    transition: color 0.25s ease-in-out;
+
+    &:hover {
+        color: #106fd4;
+    }
+}

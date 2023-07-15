@@ -1,12 +1,18 @@
 * {
     padding: 5px;
     box-sizing: border-box;
-    background-color: #000;
+}
+
+h1,
+label,
+span,
+p {
     color: #fff;
 }
 
 html,
 body {
+    background-color: #090909;
     background-size: cover;
 }
 

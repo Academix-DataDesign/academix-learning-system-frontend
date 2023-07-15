@@ -5,7 +5,6 @@ import Input from "../../UI/Input/Input";
 import { Button } from "../../UI/Button/Button";
 import "./Login.scss";
 import { login } from "../../../apis/auth";
-import "./Login.scss";
 
 const Login = () => {
   const navigate = useNavigate();
