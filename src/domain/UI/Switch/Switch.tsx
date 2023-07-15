@@ -1,9 +1,5 @@
 import { useState } from "react";
-import {
-  Switch as SwitchComponent,
-  Group,
-  useMantineTheme,
-} from "@mantine/core";
+import { Switch as SwitchComponent, useMantineTheme } from "@mantine/core";
 import { IconCheck, IconX } from "@tabler/icons-react";
 
 interface SwitchProps {

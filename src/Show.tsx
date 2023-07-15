@@ -1,6 +1,4 @@
 import Slider from "./domain/UI/Slider/Slider";
-import { Button } from "./domain/UI/Button/Button";
-import Input from "./domain/UI/Input/Input";
 import Switch from "./domain/UI/Switch/Switch";
 import Breadcrumbs from "./domain/UI/Breadcrumbs/Breadcrumbs";
 import Burger from "./domain/UI/Burger/Burger";
