@@ -14,20 +14,13 @@
   transition: 0.25s;
   text-align: center;
   transition: background-color 0.25s;
-
-  &:hover {
-    background-color: #075fbe;
-  }
 }
 
 .login {
   color: #ffffff;
-  background-color: #235284;
-}
-
-.login2 {
-  color: #ffffff;
-  background-color: #3982b8;
+  &:hover {
+    background-color: #3982b8;
+  }
 }
 
 .register {
@@ -35,15 +28,14 @@
   background-color: #ffffff;
   border: 1px solid;
   border-color: #235284;
+  &:hover {
+    color: #3982b8;
+    border: 3px solid;
+    border-color: #3982b8;
+    font-weight: 700;
+  }
 }
 
-.register2 {
-  background-color: #ffffff;
-  color: #3982b8;
-  border: 3px solid;
-  border-color: #3982b8;
-  font-weight: 700;
-}
 
 .small-size {
   width: 100px;
