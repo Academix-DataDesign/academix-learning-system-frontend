@@ -4,9 +4,19 @@ import { Button } from "../../../UI/Button/Button";
 import { useNavigate } from "react-router-dom";
 import Input from "../../../UI/Input/Input";
 import Dropzone from "../../../UI/Dropzone/Dropzone";
+import { useForm } from "react-hook-form";
+
+
+/*interface FormValues {
+  email: string;
+  password: string;
+}
+*/
 
 export default function NewRegister() {
   const [toggle, setToggle] = useState(false);
+  const { register, handleSubmit, formState } = useForm();
+  const { errors } = formState;
   const navigate = useNavigate();
   useEffect(() => {
     const imgBtn = document.querySelector(".img__btn");
@@ -29,6 +39,10 @@ export default function NewRegister() {
     };
   }, []);
 
+  const onSubmit = (data: any) => {
+    console.log(data);
+  };
+
   return (
     <>
       <div className="vector" onClick={() => navigate("/home")}>
@@ -42,9 +56,9 @@ export default function NewRegister() {
           <path
             d="M3 38L20.5 20.5L38 38M38 3L20.4967 20.5L3 3"
             stroke="white"
-            stroke-width="5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       </div>
@@ -72,8 +86,12 @@ export default function NewRegister() {
             <label>
               <Input type="password" placeholder="Confirm password" />
             </label>
-            
-            <Button style={{marginLeft: '28%'}} className="submit-2" variant={"login"}>
+
+            <Button
+              style={{ marginLeft: "28%" }}
+              className="submit-2"
+              variant={"login"}
+            >
               Sign Up
             </Button>
           </div>
@@ -107,10 +125,14 @@ export default function NewRegister() {
               </div>
             </div>
             <div className="file">
-              <Dropzone style={{width: '520px', height: '200px'}}/>
+              <Dropzone style={{ width: "520px", height: "200px" }} />
             </div>
-            
-            <Button className="submit-2" style={{marginBottom: '10px'}} variant={"login"}>
+
+            <Button
+              className="submit-2"
+              style={{ marginBottom: "10px" }}
+              variant={"login"}
+            >
               Sign Up
             </Button>
           </div>
@@ -120,11 +142,13 @@ export default function NewRegister() {
           <div className="img">
             <div className="img__text m--up">
               <h2>New here?</h2>
-              <p style={{fontSize: '16px'}}>Sign up and discover great amount of new opportunities!</p>
+              <p style={{ fontSize: "16px" }}>
+                Sign up and discover great amount of new opportunities!
+              </p>
             </div>
             <div className="img__text m--in">
               <h2>One of us?</h2>
-              <p style={{fontSize: '16px'}}>
+              <p style={{ fontSize: "16px" }}>
                 If you already have an account, just sign in.
               </p>
             </div>
@@ -133,20 +157,42 @@ export default function NewRegister() {
               <span className="m--in">Sign Up</span>
             </div>
           </div>
-          <div className="form sign-up">
-            <h2 style={{color: '#235284', marginBottom: '20px'}}>Log In</h2>
+          <form
+            className="form sign-up"
+            onSubmit={handleSubmit(onSubmit)}
+            noValidate
+          >
+            <h2 style={{ color: "#235284", marginBottom: "20px" }}>Log In</h2>
             <label>
-              <Input style={{marginTop: '50px'}} type="text" placeholder="Email" />
+              <Input
+                style={{ marginTop: "50px" }}
+                type="text"
+                placeholder="Email"
+                {...register("email", {
+                  pattern: {
+                    value:
+                      /^[a-zA-Z0-0.!#$%&'*+/=?^_`{|}*~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9]+)*$/,
+                    message: "Invalid email",
+                  },
+                })}
+              />
+              {/*<p>{errors.email?.message}</p>*/}
             </label>
             <label>
-              <Input type="password" placeholder="Password" />
+              <Input
+                type="password"
+                placeholder="Password"
+                {...register("password", {
+                  required: "Password is required",
+                })}
+              />
             </label>
             <p className="forgot-pass">Forgot password?</p>
 
-            <Button variant="login"  className="submit-2">
+            <Button variant="login" className="submit-2">
               Log in
             </Button>
-          </div>
+          </form>
         </div>
       </div>
     </>
