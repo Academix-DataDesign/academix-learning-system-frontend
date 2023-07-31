@@ -9,11 +9,14 @@ import { useForm } from "react-hook-form";
 interface FormValues {
   email: string;
   password: string;
+  confirm_password: string;
+  file: string;
+  name: string;
 }
 
 export default function NewRegister() {
   const [toggle, setToggle] = useState(false);
-  const { register, handleSubmit, formState } = useForm<FormValues>();
+  const { register, handleSubmit, formState, watch } = useForm<FormValues>();
   const { errors } = formState;
   const navigate = useNavigate();
   useEffect(() => {
@@ -40,6 +43,10 @@ export default function NewRegister() {
   const onSubmit = (data: FormValues) => {
     console.log(data);
   };
+
+  const reqOnSubmit = (data: FormValues) => {
+    console.log(data)
+  }
 
   return (
     <>
@@ -104,24 +111,60 @@ export default function NewRegister() {
               />
             </span>
             <h2>Create an account</h2>
-            <div className="form-container">
-              <div className="first-input-row">
-                <label>
-                  <Input type="text" placeholder="Name" />
-                </label>
-                <label>
-                  <Input type="email" placeholder="Email" />
-                </label>
+            <form onSubmit={handleSubmit(reqOnSubmit)} noValidate>
+              <div className="form-container">
+                <div className="first-input-row">
+                  <label>
+                    <Input
+                      type="text"
+                      placeholder="Name"
+                      {...register("name", {
+                        required: "Name is required",
+                      })}
+                    />
+                  </label>
+                  <label>
+                    <Input
+                      type="text"
+                      placeholder="Email"
+                      {...register("email", {
+                        pattern: {
+                          value:
+                            /^[a-zA-Z0-0.!#$%&'*+/=?^_`{|}*~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9]+)*$/,
+                          message: "Invalid email",
+                        },
+                      })}
+                    />
+                    <p className="error-message">{errors?.email?.message}</p>
+                  </label>
+                </div>
+                <div className="second-input-row">
+                  <label>
+                    <Input
+                      type="password"
+                      placeholder="Password"
+                      {...register("password", {
+                        required: "Password is required",
+                      })}
+                    />
+                    <p className="error-message">{errors?.password?.message}</p>
+                  </label>
+                  <label>
+                    <Input
+                      {...register("confirm_password", {
+                        required: true,
+                        validate: (val: string) => {
+                          if (watch("password") != val) {
+                            return "Your passwords do no match";
+                          }
+                        },
+                      })}
+                    />
+                  </label>
+                </div>
               </div>
-              <div className="second-input-row">
-                <label>
-                  <Input type="password" placeholder="Password" />
-                </label>
-                <label>
-                  <Input type="password" placeholder="Confirm password" />
-                </label>
-              </div>
-            </div>
+            
+
             <div className="file">
               <Dropzone style={{ width: "520px", height: "200px" }} />
             </div>
@@ -133,6 +176,7 @@ export default function NewRegister() {
             >
               Sign Up
             </Button>
+            </form>
           </div>
         )}
 
@@ -174,7 +218,7 @@ export default function NewRegister() {
                   },
                 })}
               />
-              <p className="error-message">{errors?.email?.message}</p>
+              <p className="error-message">{errors?.email ? (errors?.email?.message) : (' ')}</p>
             </label>
 
             <label>
