@@ -6,16 +6,14 @@ import Input from "../../../UI/Input/Input";
 import Dropzone from "../../../UI/Dropzone/Dropzone";
 import { useForm } from "react-hook-form";
 
-
-/*interface FormValues {
+interface FormValues {
   email: string;
   password: string;
 }
-*/
 
 export default function NewRegister() {
   const [toggle, setToggle] = useState(false);
-  const { register, handleSubmit, formState } = useForm();
+  const { register, handleSubmit, formState } = useForm<FormValues>();
   const { errors } = formState;
   const navigate = useNavigate();
   useEffect(() => {
@@ -39,7 +37,7 @@ export default function NewRegister() {
     };
   }, []);
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: FormValues) => {
     console.log(data);
   };
 
@@ -176,8 +174,9 @@ export default function NewRegister() {
                   },
                 })}
               />
-              {/*<p>{errors.email?.message}</p>*/}
+              <p className="error-message">{errors?.email?.message}</p>
             </label>
+
             <label>
               <Input
                 type="password"
@@ -186,6 +185,7 @@ export default function NewRegister() {
                   required: "Password is required",
                 })}
               />
+              <p className="error-message">{errors?.password?.message}</p>
             </label>
             <p className="forgot-pass">Forgot password?</p>
 

@@ -1,9 +1,14 @@
-import { InputHTMLAttributes, FC } from "react";
+import {
+  InputHTMLAttributes,
+  FC,
+  forwardRef,
+  ForwardedRef,
+} from "react";
 import "./Input.scss";
 import { VariantProps, cva } from "class-variance-authority";
 import { cn } from "../../../utils/cn";
 
-interface Input
+interface InputProps
   extends InputHTMLAttributes<HTMLInputElement>,
     VariantProps<typeof inputVariants> {}
 
@@ -18,10 +23,16 @@ const inputVariants = cva("input", {
   },
 });
 
-const Input: FC<Input> = ({ className, variant, ...props }) => {
-  return (
-    <input {...props} className={cn(inputVariants({ variant, className }))} />
-  );
-};
+const Input: FC<InputProps> = forwardRef(
+  ({ className, variant, ...props }: InputProps, ref: ForwardedRef<HTMLInputElement>) => {
+    return (
+      <input
+        {...props}
+        className={cn(inputVariants({ variant, className }))}
+        ref={ref} 
+      />
+    );
+  }
+);
 
 export default Input;
