@@ -3,7 +3,7 @@ import "./App.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Show from "./Show";
 import Vocabulary from "./domain/pages/Vocabulary/Vocabulary";
-import UserRegister from "./domain/pages/Register/UserRegister/UserRegister";
+import UserRegister from "./domain/pages/Register/LearnerRegister/UserRegister";
 import InstructorRegister from "./domain/pages/Register/InstructorRegister/InstructorRegister";
 import Login from "./domain/pages/Login/Login";
 import Home from "./domain/pages/Home/Home";
