@@ -9,6 +9,7 @@ import RegisterInstructor from "../../../components/RegisterComponents/RegisterI
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { setUser } from "../../../../slices/authSlice";
+import { useSnackbar } from "notistack";
 
 interface FormValues {
   email: string;
@@ -18,6 +19,7 @@ interface FormValues {
 export default function NewRegister() {
   const [toggle, setToggle] = useState(false);
   const dispatch = useDispatch();
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
   const { register, handleSubmit, formState } = useForm<FormValues>();
   const { errors } = formState;
   const navigate = useNavigate();
@@ -44,6 +46,7 @@ export default function NewRegister() {
 
   const onSubmit = async (formData: FormValues) => {
     try {
+      closeSnackbar();
       const { data } = await axios.post(
         "https://api.academix.me/api/v1/login",
         formData
@@ -51,8 +54,16 @@ export default function NewRegister() {
       dispatch(setUser(data));
       localStorage.setItem("userToken", JSON.stringify(data.token));
       navigate(-1);
-    } catch (error) {
-      console.log(error.message);
+    } catch (e) {
+      enqueueSnackbar(
+        e.response && e.response.data && e.response.data.message
+          ? e.response.data.message
+          : e.message,
+        {
+          variant: "error",
+          autoHideDuration: 4000,
+        }
+      );
     }
   };
 

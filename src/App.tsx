@@ -10,10 +10,12 @@ import Home from "./domain/pages/Home/Home";
 import RegisterSelect from "./domain/pages/Register/RegisterSelect/RegisterSelect";
 import ForgotPassword from "./domain/pages/ForgetPassword/ForgetPassword";
 import NewRegister from "./domain/pages/Register/NewRegister/NewRegister";
+import { SnackbarProvider } from "notistack";
 
 function App() {
   return (
     <Fragment>
+      <SnackbarProvider anchorOrigin={{ vertical: "top", horizontal: "center" }}>
       <Router>
         <Routes>
           <Route path="/" element={<Show />} />
@@ -27,6 +29,7 @@ function App() {
           <Route path="/vocabulary" element={<Vocabulary />} />
         </Routes>
       </Router>
+      </SnackbarProvider>
     </Fragment>
   );
 }
