@@ -6,6 +6,9 @@ import Input from "../../../UI/Input/Input";
 import { useForm } from "react-hook-form";
 import RegisterLearner from "../../../components/RegisterComponents/RegisterLearner";
 import RegisterInstructor from "../../../components/RegisterComponents/RegisterInstructor";
+import { useDispatch } from "react-redux";
+import axios from "axios";
+import { setUser } from "../../../../slices/authSlice";
 
 interface FormValues {
   email: string;
@@ -14,6 +17,7 @@ interface FormValues {
 
 export default function NewRegister() {
   const [toggle, setToggle] = useState(false);
+  const dispatch = useDispatch();
   const { register, handleSubmit, formState } = useForm<FormValues>();
   const { errors } = formState;
   const navigate = useNavigate();
@@ -38,8 +42,15 @@ export default function NewRegister() {
     };
   }, []);
 
-  const onSubmit = (data: FormValues) => {
-    console.log(data);
+  const onSubmit = async(formData: FormValues) => {
+    try {
+      const {data} = await axios.post("https://api.academix.me/api/v1/login", formData);
+      dispatch(setUser(data));
+      localStorage.setItem("userToken", JSON.stringify(data.token));
+     navigate(-1);
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (
@@ -95,7 +106,7 @@ export default function NewRegister() {
             <h2 style={{ color: "#235284", marginBottom: "20px" }}>Log In</h2>
             <label>
               <Input
-                style={{ marginTop: "50px" }}
+                style={{ marginTop: "80px" }}
                 type="text"
                 placeholder="Email"
                 {...register("email", {
