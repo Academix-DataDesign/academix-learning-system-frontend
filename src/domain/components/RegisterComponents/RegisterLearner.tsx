@@ -27,25 +27,32 @@ const RegisterLearner = ({ toggle, setToggle }: RegisterLearner) => {
       <span className="switch-icon">
         <img
           className="instructor-img"
+          style={{position: 'relative',zIndex: 999}}
           alt="Instructor"
           src="https://anima-uploads.s3.amazonaws.com/projects/649474d8048a6087ab20c40b/releases/6495c491a1b0005e5700e644/img/instructor@2x.png"
           onClick={() => setToggle(!toggle)}
         />
       </span>
-      <h2>Create an account</h2>
+      <h2 style={{position: 'relative', top: '-20px'}}>Create an account</h2>
+      {errors?.name && (
+        <p style={{position: 'absolute', color: 'red', top: '95px', left: '195px'}}>
+          {errors.name.message}
+        </p>
+      )}
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <label>
           <Input
+       
             type="text"
             placeholder="Name"
             {...register("name", {
               required: "Name is required",
             })}
           />
-          {errors?.name && (
-            <p className="error-message">{errors.name.message}</p>
-          )}
         </label>
+        {errors?.email && (
+          <p style={{position: 'absolute', color: 'red', top: '177px', left: '195px'}}>{errors.email.message}</p>
+        )}
         <label>
           <Input
             type="text"
@@ -59,22 +66,23 @@ const RegisterLearner = ({ toggle, setToggle }: RegisterLearner) => {
               },
             })}
           />
-          {errors?.email && (
-            <p className="error-message">{errors.email.message}</p>
-          )}
         </label>
+        {errors?.password && (
+          <p style={{position: 'absolute', color: 'red', top: '258px', left: '195px'}}>{errors.password.message}</p>
+        )}
         <label>
           <Input
+          style={{marginTop: '20px'}}
             type="password"
             placeholder="Password"
             {...register("password", {
               required: "Password is required",
             })}
           />
-          {errors?.password && (
-            <p className="error-message">{errors.password.message}</p>
-          )}
         </label>
+        {errors?.confirm_password && (
+          <p style={{position: 'absolute', color: 'red', top: '339px', left: '195px'}}>{errors.confirm_password.message}</p>
+        )}
         <label>
           <Input
             {...register("confirm_password", {
@@ -88,9 +96,6 @@ const RegisterLearner = ({ toggle, setToggle }: RegisterLearner) => {
             })}
             placeholder="Confirm password"
           />
-          {errors?.confirm_password && (
-            <p className="error-message">{errors.confirm_password.message}</p>
-          )}
         </label>
 
         <Button

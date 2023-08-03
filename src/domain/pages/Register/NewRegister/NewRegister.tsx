@@ -104,6 +104,9 @@ export default function NewRegister() {
             noValidate
           >
             <h2 style={{ color: "#235284", marginBottom: "20px" }}>Log In</h2>
+            <p style={{position: 'absolute', color: 'red', left: '195px', top: '150px'}}>
+                {errors?.email ? errors?.email?.message : " "}
+              </p>
             <label>
               <Input
                 style={{ marginTop: "80px" }}
@@ -118,11 +121,9 @@ export default function NewRegister() {
                   },
                 })}
               />
-              <p className="error-message">
-                {errors?.email ? errors?.email?.message : " "}
-              </p>
+              
             </label>
-
+            <p style={{position: 'absolute', color: 'red', left: '195px', top: '231px'}}>{errors?.password?.message}</p>
             <label>
               <Input
                 type="password"
@@ -131,7 +132,7 @@ export default function NewRegister() {
                   required: "Password is required",
                 })}
               />
-              <p className="error-message">{errors?.password?.message}</p>
+              
             </label>
             <p className="forgot-pass">Forgot password?</p>
 
