@@ -47,12 +47,16 @@ const RegisterInstructor = ({ toggle, setToggle }: RegisterInstructorProps) => {
                   required: "Name is required",
                 })}
               />
+              {errors?.name && (
+                <p className="error-message">{errors.name.message}</p>
+              )}
             </label>
             <label>
               <Input
                 type="text"
                 placeholder="Email"
                 {...register("email", {
+                  required: "Email is required",
                   pattern: {
                     value:
                       /^[a-zA-Z0-0.!#$%&'*+/=?^_`{|}*~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9]+)*$/,
@@ -60,7 +64,7 @@ const RegisterInstructor = ({ toggle, setToggle }: RegisterInstructorProps) => {
                   },
                 })}
               />
-              {/* Conditional rendering for the error message */}
+
               {errors?.email && (
                 <p className="error-message">{errors.email.message}</p>
               )}
@@ -75,7 +79,7 @@ const RegisterInstructor = ({ toggle, setToggle }: RegisterInstructorProps) => {
                   required: "Password is required",
                 })}
               />
-              {/* Conditional rendering for the error message */}
+
               {errors?.password && (
                 <p className="error-message">{errors.password.message}</p>
               )}
@@ -83,7 +87,7 @@ const RegisterInstructor = ({ toggle, setToggle }: RegisterInstructorProps) => {
             <label>
               <Input
                 {...register("confirm_password", {
-                  required: true,
+                  required: "Confirm password is required",
                   validate: (val: string) => {
                     if (watch("password") !== val) {
                       return "Your passwords do not match";

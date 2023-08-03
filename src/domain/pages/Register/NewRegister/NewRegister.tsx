@@ -42,7 +42,6 @@ export default function NewRegister() {
     console.log(data);
   };
 
-  
   return (
     <>
       <div className="vector" onClick={() => navigate("/home")}>
@@ -100,6 +99,7 @@ export default function NewRegister() {
                 type="text"
                 placeholder="Email"
                 {...register("email", {
+                  required: "Email is required",
                   pattern: {
                     value:
                       /^[a-zA-Z0-0.!#$%&'*+/=?^_`{|}*~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9]+)*$/,

@@ -1,12 +1,27 @@
 import { Button } from "../../UI/Button/Button";
 import Input from "../../UI/Input/Input";
+import { useForm } from "react-hook-form";
 
 interface RegisterLearner {
   toggle: boolean;
   setToggle: (toggle: boolean) => void;
 }
 
+interface FormValues {
+  name: string;
+  email: string;
+  password: string;
+  confirm_password: string;
+}
+
 const RegisterLearner = ({ toggle, setToggle }: RegisterLearner) => {
+  const { register, handleSubmit, formState, watch } = useForm<FormValues>();
+  const { errors } = formState;
+
+  const onSubmit = (data: FormValues) => {
+    console.log(data);
+  };
+
   return (
     <div className="form sign-in">
       <span className="switch-icon">
@@ -18,26 +33,74 @@ const RegisterLearner = ({ toggle, setToggle }: RegisterLearner) => {
         />
       </span>
       <h2>Create an account</h2>
-      <label>
-        <Input type="text" placeholder="Name" />
-      </label>
-      <label>
-        <Input type="email" placeholder="Email" />
-      </label>
-      <label>
-        <Input type="password" placeholder="Password" />
-      </label>
-      <label>
-        <Input type="password" placeholder="Confirm password" />
-      </label>
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+        <label>
+          <Input
+            type="text"
+            placeholder="Name"
+            {...register("name", {
+              required: "Name is required",
+            })}
+          />
+          {errors?.name && (
+            <p className="error-message">{errors.name.message}</p>
+          )}
+        </label>
+        <label>
+          <Input
+            type="text"
+            placeholder="Email"
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value:
+                  /^[a-zA-Z0-0.!#$%&'*+/=?^_`{|}*~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9]+)*$/,
+                message: "Invalid email",
+              },
+            })}
+          />
+          {errors?.email && (
+            <p className="error-message">{errors.email.message}</p>
+          )}
+        </label>
+        <label>
+          <Input
+            type="password"
+            placeholder="Password"
+            {...register("password", {
+              required: "Password is required",
+            })}
+          />
+          {errors?.password && (
+            <p className="error-message">{errors.password.message}</p>
+          )}
+        </label>
+        <label>
+          <Input
+            {...register("confirm_password", {
+              required: "Confirm password is required",
+              validate: (val: string) => {
+                if (watch("password") !== val) {
+                  return "Your passwords do not match";
+                }
+                return true;
+              },
+            })}
+            placeholder="Confirm password"
+          />
+          {errors?.confirm_password && (
+            <p className="error-message">{errors.confirm_password.message}</p>
+          )}
+        </label>
 
-      <Button
-        style={{ marginLeft: "28%" }}
-        className="submit-2"
-        variant={"login"}
-      >
-        Sign Up
-      </Button>
+        <Button
+          style={{ marginLeft: "28%" }}
+          className="submit-2"
+          variant={"login"}
+        >
+          Sign Up
+        </Button>
+      </form>
     </div>
   );
 };
