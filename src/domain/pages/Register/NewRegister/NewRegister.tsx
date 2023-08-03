@@ -42,12 +42,15 @@ export default function NewRegister() {
     };
   }, []);
 
-  const onSubmit = async(formData: FormValues) => {
+  const onSubmit = async (formData: FormValues) => {
     try {
-      const {data} = await axios.post("https://api.academix.me/api/v1/login", formData);
+      const { data } = await axios.post(
+        "https://api.academix.me/api/v1/login",
+        formData
+      );
       dispatch(setUser(data));
       localStorage.setItem("userToken", JSON.stringify(data.token));
-     navigate(-1);
+      navigate(-1);
     } catch (error) {
       console.log(error.message);
     }
@@ -104,9 +107,16 @@ export default function NewRegister() {
             noValidate
           >
             <h2 style={{ color: "#235284", marginBottom: "20px" }}>Log In</h2>
-            <p style={{position: 'absolute', color: 'red', left: '195px', top: '150px'}}>
-                {errors?.email ? errors?.email?.message : " "}
-              </p>
+            <p
+              style={{
+                position: "absolute",
+                color: "red",
+                left: "195px",
+                top: "150px",
+              }}
+            >
+              {errors?.email ? errors?.email?.message : " "}
+            </p>
             <label>
               <Input
                 style={{ marginTop: "80px" }}
@@ -121,9 +131,17 @@ export default function NewRegister() {
                   },
                 })}
               />
-              
             </label>
-            <p style={{position: 'absolute', color: 'red', left: '195px', top: '231px'}}>{errors?.password?.message}</p>
+            <p
+              style={{
+                position: "absolute",
+                color: "red",
+                left: "195px",
+                top: "231px",
+              }}
+            >
+              {errors?.password?.message}
+            </p>
             <label>
               <Input
                 type="password"
@@ -132,7 +150,6 @@ export default function NewRegister() {
                   required: "Password is required",
                 })}
               />
-              
             </label>
             <p className="forgot-pass">Forgot password?</p>
 

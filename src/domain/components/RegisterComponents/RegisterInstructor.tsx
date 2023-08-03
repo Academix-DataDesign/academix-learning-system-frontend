@@ -30,18 +30,27 @@ const RegisterInstructor = ({ toggle, setToggle }: RegisterInstructorProps) => {
       <span className="switch-icon">
         <img
           className="instructor-img"
-          style={{position: 'relative',zIndex: 999}}
+          style={{ position: "relative", zIndex: 999 }}
           alt="Instructor"
           src="https://generation-sessions.s3.amazonaws.com/9a1cc2cccadd13a868de937f3531f07e/img/listener@2x.png"
           onClick={() => setToggle(!toggle)}
         />
       </span>
-      <h2 style={{position: 'relative', top: '-20px'}}>Create an account</h2>
+      <h2 style={{ position: "relative", top: "-20px" }}>Create an account</h2>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <div className="form-container">
           <div className="first-input-row">
             {errors?.name && (
-              <p style={{position:'absolute',top: '95px', color: 'red', left: '60px'}}>{errors.name.message}</p>
+              <p
+                style={{
+                  position: "absolute",
+                  top: "95px",
+                  color: "red",
+                  left: "60px",
+                }}
+              >
+                {errors.name.message}
+              </p>
             )}
             <label>
               <Input
@@ -53,7 +62,16 @@ const RegisterInstructor = ({ toggle, setToggle }: RegisterInstructorProps) => {
               />
             </label>
             {errors?.email && (
-              <p style={{position:'absolute',top: '95px', color: 'red', left: '330px'}}>{errors.email.message}</p>
+              <p
+                style={{
+                  position: "absolute",
+                  top: "95px",
+                  color: "red",
+                  left: "330px",
+                }}
+              >
+                {errors.email.message}
+              </p>
             )}
             <label>
               <Input
@@ -72,7 +90,14 @@ const RegisterInstructor = ({ toggle, setToggle }: RegisterInstructorProps) => {
           </div>
           <div className="second-input-row">
             {errors?.password && (
-              <p style={{position:'absolute',top: '175px', color: 'red', left: '60px'}}>
+              <p
+                style={{
+                  position: "absolute",
+                  top: "175px",
+                  color: "red",
+                  left: "60px",
+                }}
+              >
                 {errors.password.message}
               </p>
             )}
@@ -86,7 +111,14 @@ const RegisterInstructor = ({ toggle, setToggle }: RegisterInstructorProps) => {
               />
             </label>
             {errors?.confirm_password && (
-              <p style={{position:'absolute',top: '175px', color: 'red', left: '330px'}}>
+              <p
+                style={{
+                  position: "absolute",
+                  top: "175px",
+                  color: "red",
+                  left: "330px",
+                }}
+              >
                 {errors.confirm_password.message}
               </p>
             )}
