@@ -61,7 +61,7 @@ export default function NewRegister() {
           : e.message,
         {
           variant: "error",
-          autoHideDuration: 4000,
+          autoHideDuration: 3000,
         }
       );
     }

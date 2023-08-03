@@ -1,6 +1,11 @@
 import { Button } from "../../UI/Button/Button";
 import Input from "../../UI/Input/Input";
 import { useForm } from "react-hook-form";
+import { useSnackbar } from "notistack";
+import { setUser } from "../../../slices/authSlice";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 interface RegisterLearner {
   toggle: boolean;
@@ -17,9 +22,35 @@ interface FormValues {
 const RegisterLearner = ({ toggle, setToggle }: RegisterLearner) => {
   const { register, handleSubmit, formState, watch } = useForm<FormValues>();
   const { errors } = formState;
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const onSubmit = (data: FormValues) => {
-    console.log(data);
+  const onSubmit = async (formData: FormValues) => {
+    try {
+      closeSnackbar();
+      const { data } = await axios.post(
+        "https://api.academix.me/api/v1/register",
+        {
+          name: formData.name,
+          email: formData.email,
+          password: formData.password,
+        }
+      );
+      dispatch(setUser(data));
+      localStorage.setItem("userToken", JSON.stringify(data.token));
+      navigate('/');
+    } catch (e) {
+      enqueueSnackbar(
+        e.response && e.response.data && e.response.data.message
+          ? e.response.data.message
+          : e.message,
+        {
+          variant: "error",
+          autoHideDuration: 3000,
+        }
+      );
+    }
   };
 
   return (
@@ -118,6 +149,7 @@ const RegisterLearner = ({ toggle, setToggle }: RegisterLearner) => {
         )}
         <label>
           <Input
+          type="password"
             {...register("confirm_password", {
               required: "Confirm password is required",
               validate: (val: string) => {
