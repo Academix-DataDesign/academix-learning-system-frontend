@@ -36,6 +36,27 @@
   }
 }
 
+.squareLogin {
+  border-radius: 8px;
+  color: #ffffff;
+  &:hover {
+    background-color: #3982b8;
+  }
+}
+
+.squareRegister {
+  border-radius: 8px;
+  color: #235284;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #235284;
+  &:hover {
+    color: #3982b8;
+    border: 3px solid;
+    border-color: #3982b8;
+    font-weight: 700;
+  }
+}
 
 .small-size {
   width: 100px;

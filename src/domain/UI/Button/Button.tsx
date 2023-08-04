@@ -15,6 +15,8 @@ const buttonVariants = cva("btn", {
       login2: "login2",
       register: "register",
       register2: "register2",
+      squareLogin: 'squareLogin',
+      squareRegister: 'squareRegister'
     },
     size: {
       default: "default-size",
