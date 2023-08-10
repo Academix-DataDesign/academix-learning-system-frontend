@@ -1,38 +1,89 @@
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
+import { RootState } from "../../../../Store";
+import img from '../../../../assets/instructor.png'
+import { Button } from "../../../UI/Button/Button";
 import "./NewNavbar.scss";
 
 const NewNavbar = () => {
+  const user = useSelector((state: RootState) => state.auth.user);
+  const [menuActive, setMenuActive] = useState(false);
+  const [searchActive, setSearchActive] = useState(false);
+
+  const handleMenuClick = () => {
+    setMenuActive(!menuActive);
+    setSearchActive(false);
+  };
+
+  const handleCloseClick = () => {
+    setMenuActive(false);
+    setSearchActive(false);
+  };
+
+  const handleSearchClick = () => {
+    setSearchActive(true);
+    setMenuActive(false);
+  };
+
   return (
-    <div className="header">
-      <div className="header_div_left">
-        <div className="div_sign_up">
-          <a className="font_header_right"> SIGN UP </a>
-        </div>
-
-        <div className="div_login">
-          <a className="font_header_right"> LOG IN </a>
-        </div>
-        <div className="search_bar_div">
-          <input type="search" style={{border: '1px solid white', color: 'white'}} placeholder="Find Freelancers" />
-        </div>
+    <nav>
+      <div className={`menu-icon ${menuActive ? "hide" : ""}`} onClick={handleMenuClick}>
+        <span>
+          <FaBars />
+        </span>
       </div>
-
-      <div className="header_div_right">
-        <div className="header_div_right_mini">
-          <div className="upwork_logo_div">
-            <img src="../images/logo/upwork.png" width="100%" height="100%" />
-          </div>
-          <div className="div_navbar_items">
-            <a className="font_header_left"> Home </a>
-            <a className="font_header_left"> Courses </a>
-            <a className="font_header_left"> Categories </a>
-          </div>
-          <div className="div_navbar_items">
-            
-          </div>
-          
-        </div>
+      <div className="logo">Academix</div>
+      <div className={`nav-items ${menuActive ? "active" : ""}`}>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Categories</a>
+        </li>
+        <li>
+          <a href="#">Courses</a>
+        </li>
       </div>
-    </div>
+      <div className={`search-icon ${searchActive ? "hide" : ""}`} onClick={handleSearchClick}>
+        <span>
+          <FaSearch />
+        </span>
+      </div>
+      <div className={`cancel-icon ${searchActive ? "show" : ""}`} onClick={handleCloseClick}>
+        <span>
+          <FaTimes />
+        </span>
+      </div>
+      <form action="#" className={searchActive ? "active" : ""}>
+        <input
+          type="search"
+          className="search-data"
+          placeholder="Search"
+          required
+        />
+        <button type="submit" style={{ padding: "10px" }} className="search-button">
+          <FaSearch />
+        </button>
+      </form>
+      <div className="profile">
+        {user ? (
+          <>
+            <Button style={{ marginLeft: "10px", width: "110px" }}>
+              Login
+            </Button>
+            <Button style={{ marginLeft: "10px", width: "110px" }} variant={"register"}>
+              Register
+            </Button>
+          </>
+        ) : (
+          <div className="box">
+            <img src={img} alt="Profile" />
+            <div className="online" />
+          </div>
+        )}
+      </div>
+    </nav>
   );
 };
 
