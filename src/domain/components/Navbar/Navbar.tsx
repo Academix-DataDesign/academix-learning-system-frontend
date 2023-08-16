@@ -1,51 +1,89 @@
-import Logo from "../../../assets/Academix-Logo.png";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
+import { RootState } from "../../../Store";
+import img from '../../../../assets/instructor.png'
 import { Button } from "../../UI/Button/Button";
-
-import classes from "./Navbar.module.scss";
+import "./Navbar.scss";
 
 const Navbar = () => {
+  const user = useSelector((state: RootState) => state.auth.user);
+  const [menuActive, setMenuActive] = useState(false);
+  const [searchActive, setSearchActive] = useState(false);
+
+  const handleMenuClick = () => {
+    setMenuActive(!menuActive);
+    setSearchActive(false);
+  };
+
+  const handleCloseClick = () => {
+    setMenuActive(false);
+    setSearchActive(false);
+  };
+
+  const handleSearchClick = () => {
+    setSearchActive(true);
+    setMenuActive(false);
+  };
+
   return (
-    <header>
-      <div className={classes["left-side"]}>
-        <span className={classes.logo}>
-          <img src={Logo} />
-          <span>Academix</span>
-        </span>
-        <ul className={classes.navbar}>
-          <li>
-            <span className="active">Home</span>
-          </li>
-          <li>
-            <span>About</span>
-          </li>
-          <li>
-            <span>Courses</span>
-          </li>
-          <li>
-            <span>Categories</span>
-          </li>
-        </ul>
-      </div>
-      <div className={classes.main}>
+    <nav>
+      <div className={`menu-icon ${menuActive ? "hide" : ""}`} onClick={handleMenuClick}>
         <span>
-          <Button
-            variant={"login"}
-            style={{ width: "200px", height: "65px", fontSize: "24px" }}
-          >
-            Login
-          </Button>
+          <FaBars />
         </span>
-        <span>
-          <Button
-            variant={"register"}
-            style={{ width: "200px", height: "65px", fontSize: "24px" }}
-          >
-            Register
-          </Button>
-        </span>
-        <div className="bx bx-menu" id="menu-icon"></div>
       </div>
-    </header>
+      <div className="logo">Academix</div>
+      <div className={`nav-items ${menuActive ? "active" : ""}`}>
+        <li>
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Categories</a>
+        </li>
+        <li>
+          <a href="#">Courses</a>
+        </li>
+      </div>
+      <div className={`search-icon ${searchActive ? "hide" : ""}`} onClick={handleSearchClick}>
+        <span>
+          <FaSearch />
+        </span>
+      </div>
+      <div className={`cancel-icon ${searchActive ? "show" : ""}`} onClick={handleCloseClick}>
+        <span>
+          <FaTimes />
+        </span>
+      </div>
+      <form action="#" className={searchActive ? "active" : ""}>
+        <input
+          type="search"
+          className="search-data"
+          placeholder="Search"
+          required
+        />
+        <button type="submit" style={{ padding: "10px" }} className="search-button">
+          <FaSearch />
+        </button>
+      </form>
+      <div className="profile">
+        {user ? (
+          <>
+            <Button style={{ marginLeft: "10px", width: "110px" }}>
+              Login
+            </Button>
+            <Button style={{ marginLeft: "10px", width: "110px" }} variant={"register"}>
+              Register
+            </Button>
+          </>
+        ) : (
+          <div className="box">
+            <img src={img} alt="Profile" />
+            <div className="online" />
+          </div>
+        )}
+      </div>
+    </nav>
   );
 };
 
