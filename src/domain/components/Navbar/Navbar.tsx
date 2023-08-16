@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import { FaSearch, FaBars, FaTimes } from "react-icons/fa";
 import { RootState } from "../../../Store";
-import img from '../../../../assets/instructor.png'
+import img from '../../../assets/instructor.png'
 import { Button } from "../../UI/Button/Button";
 import "./Navbar.scss";
 
