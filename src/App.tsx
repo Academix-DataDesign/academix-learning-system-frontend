@@ -11,6 +11,7 @@ import RegisterSelect from "./domain/pages/Register/RegisterSelect/RegisterSelec
 import ForgotPassword from "./domain/pages/ForgetPassword/ForgetPassword";
 import NewRegister from "./domain/pages/Register/NewRegister/NewRegister";
 import { SnackbarProvider } from "notistack";
+import Courses from "./domain/pages/Courses/Courses";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/register-instructor" element={<InstructorRegister />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/courses" element={<Courses />} />
           <Route path="/vocabulary" element={<Vocabulary />} />
         </Routes>
       </Router>
