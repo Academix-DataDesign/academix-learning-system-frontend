@@ -62,7 +62,7 @@ const Courses = () => {
         </span>
       )}
       <div className="w-full h-[1000px] mt-5 bg-indigo-50">
-        <div className="lg:mx-20 md:16 mx-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xs:grid-cols-5 gap-10">
+        <div className="lg:mx-20 md:16 mx-5 grid grid-cols-1 md:grid-cols-2 cs:grid-cols-4 xs:grid-cols-5 gap-10">
           <Card image="sdasd" length={16} lessons={200} name="React course" price={300} stars={4} />
           <Card image="sdasd" length={16} lessons={200} name="React course" price={300} stars={4} />
           <Card image="sdasd" length={16} lessons={200} name="React course" price={300} stars={4} />

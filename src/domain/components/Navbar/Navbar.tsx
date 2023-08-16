@@ -5,6 +5,7 @@ import { RootState } from "../../../Store";
 import img from '../../../assets/instructor.png'
 import { Button } from "../../UI/Button/Button";
 import "./Navbar.scss";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const user = useSelector((state: RootState) => state.auth.user);
@@ -42,7 +43,9 @@ const Navbar = () => {
           <a href="#">Categories</a>
         </li>
         <li>
+          <Link to={'/courses'}>
           <a href="#">Courses</a>
+          </Link>
         </li>
       </div>
       <div className={`search-icon ${searchActive ? "hide" : ""}`} onClick={handleSearchClick}>
