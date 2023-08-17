@@ -1,4 +1,5 @@
 
+import Footer from "./domain/components/Footer/Footer";
 import Navbar from "./domain/components/Navbar/Navbar";
 
 const Show = () => {
@@ -7,6 +8,7 @@ const Show = () => {
       
       {/* <Navbar /> */}
       <Navbar />
+      <Footer/>
     </>
   );
 };
