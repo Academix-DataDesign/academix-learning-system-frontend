@@ -49,11 +49,14 @@ export default function NewRegister() {
       closeSnackbar();
       const { data } = await axios.post(
         "https://api.academix.me/api/v1/login",
-        formData
+        formData,
+        { withCredentials: true }
       );
       dispatch(setUser(data));
-      localStorage.setItem("userToken", JSON.stringify(data.token));
-      navigate(-1);
+      console.log(data.token, 1)
+      localStorage.setItem("token", data?.token);
+      console.log(JSON.stringify(data.token), 2)
+      //navigate(-1);
     } catch (e) {
       enqueueSnackbar(
         e.response && e.response.data && e.response.data.message

@@ -37,7 +37,7 @@ const Card = ({ image, stars, name, lessons, price, length }: Card) => {
           alt="Image"
         />
         <div className="bg-stone-50 flex pb-5 justify-between mx-3">
-          <div className="flex-col">
+          <div className="flex-col justify-between">
             <div className="flex items-center space-x-1 mt-4">
               {renderStars()}
             </div>

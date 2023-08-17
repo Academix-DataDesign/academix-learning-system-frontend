@@ -35,11 +35,12 @@ const RegisterLearner = ({ toggle, setToggle }: RegisterLearner) => {
           name: formData.name,
           email: formData.email,
           password: formData.password,
-        }
+        },
+        { withCredentials: true }
       );
       dispatch(setUser(data));
       localStorage.setItem("userToken", JSON.stringify(data.token));
-      navigate('/');
+      navigate("/");
     } catch (e) {
       enqueueSnackbar(
         e.response && e.response.data && e.response.data.message
@@ -149,7 +150,7 @@ const RegisterLearner = ({ toggle, setToggle }: RegisterLearner) => {
         )}
         <label>
           <Input
-          type="password"
+            type="password"
             {...register("confirm_password", {
               required: "Confirm password is required",
               validate: (val: string) => {
