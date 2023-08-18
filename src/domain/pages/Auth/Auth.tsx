@@ -54,6 +54,7 @@ export default function Auth() {
       );
       dispatch(login(data));
       console.log(data.token, 1)
+
       //navigate(-1);
     } catch (e) {
       enqueueSnackbar(

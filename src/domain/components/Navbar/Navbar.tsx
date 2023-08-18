@@ -37,7 +37,9 @@ const Navbar = () => {
       <div className="logo">Academix</div>
       <div className={`nav-items ${menuActive ? "active" : ""}`}>
         <li>
+          <Link to={'/'}>
           <a href="#">Home</a>
+          </Link>
         </li>
         <li>
           <a href="#">Categories</a>
@@ -78,9 +80,11 @@ const Navbar = () => {
         ) : (
           
           <>
+          <Link to={'/auth'}>
           <Button style={{ marginLeft: "10px", width: "110px" }}>
             Login
           </Button>
+          </Link>
           <Button style={{ marginLeft: "10px", width: "110px" }} variant={"register"}>
             Register
           </Button>
