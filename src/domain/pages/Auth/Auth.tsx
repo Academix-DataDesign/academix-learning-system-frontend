@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import "./NewRegister.scss";
-import { Button } from "../../../UI/Button/Button";
+import "./Auth.scss";
+import { Button } from "../../UI/Button/Button";
 import { useNavigate } from "react-router-dom";
-import Input from "../../../UI/Input/Input";
+import Input from "../../UI/Input/Input";
 import { useForm } from "react-hook-form";
-import RegisterLearner from "../../../components/RegisterComponents/RegisterLearner";
-import RegisterInstructor from "../../../components/RegisterComponents/RegisterInstructor";
+import RegisterLearner from "../../components/RegisterComponents/RegisterLearner";
+import RegisterInstructor from "../../components/RegisterComponents/RegisterInstructor";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-import { setUser } from "../../../../slices/authSlice";
+import { setUser } from "../../../slices/authSlice";
 import { useSnackbar } from "notistack";
 
 interface FormValues {
@@ -16,7 +16,7 @@ interface FormValues {
   password: string;
 }
 
-export default function NewRegister() {
+export default function Auth() {
   const [toggle, setToggle] = useState(false);
   const dispatch = useDispatch();
   const { enqueueSnackbar, closeSnackbar } = useSnackbar();
