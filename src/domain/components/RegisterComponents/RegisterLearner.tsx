@@ -2,7 +2,7 @@ import { Button } from "../../UI/Button/Button";
 import Input from "../../UI/Input/Input";
 import { useForm } from "react-hook-form";
 import { useSnackbar } from "notistack";
-import { setUser } from "../../../slices/authSlice";
+import { login } from "../../../store/authSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -38,8 +38,7 @@ const RegisterLearner = ({ toggle, setToggle }: RegisterLearner) => {
         },
         { withCredentials: true }
       );
-      dispatch(setUser(data));
-      localStorage.setItem("userToken", JSON.stringify(data.token));
+      dispatch(login(data));
       navigate("/");
     } catch (e) {
       enqueueSnackbar(

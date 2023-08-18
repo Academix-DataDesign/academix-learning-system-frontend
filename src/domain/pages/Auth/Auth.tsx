@@ -8,7 +8,7 @@ import RegisterLearner from "../../components/RegisterComponents/RegisterLearner
 import RegisterInstructor from "../../components/RegisterComponents/RegisterInstructor";
 import { useDispatch } from "react-redux";
 import axios from "axios";
-import { setUser } from "../../../slices/authSlice";
+import { login } from "../../../store/authSlice";
 import { useSnackbar } from "notistack";
 
 interface FormValues {
@@ -52,10 +52,8 @@ export default function Auth() {
         formData,
         { withCredentials: true }
       );
-      dispatch(setUser(data));
+      dispatch(login(data));
       console.log(data.token, 1)
-      localStorage.setItem("token", data?.token);
-      console.log(JSON.stringify(data.token), 2)
       //navigate(-1);
     } catch (e) {
       enqueueSnackbar(

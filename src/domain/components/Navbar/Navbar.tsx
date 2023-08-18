@@ -71,19 +71,20 @@ const Navbar = () => {
       </form>
       <div className="profile">
         {user ? (
-          <>
-            <Button style={{ marginLeft: "10px", width: "110px" }}>
-              Login
-            </Button>
-            <Button style={{ marginLeft: "10px", width: "110px" }} variant={"register"}>
-              Register
-            </Button>
-          </>
-        ) : (
           <div className="box">
-            <img src={img} alt="Profile" />
-            <div className="online" />
-          </div>
+          <img src={img} alt="Profile" />
+          <div className="online" />
+        </div>
+        ) : (
+          
+          <>
+          <Button style={{ marginLeft: "10px", width: "110px" }}>
+            Login
+          </Button>
+          <Button style={{ marginLeft: "10px", width: "110px" }} variant={"register"}>
+            Register
+          </Button>
+        </>
         )}
       </div>
     </nav>
