@@ -9,6 +9,7 @@ import Home from "./domain/pages/Home/Home";
 import Auth from "./domain/pages/Auth/Auth";
 import { SnackbarProvider } from "notistack";
 import Courses from "./domain/pages/Courses/Courses";
+import SingleCourse from "./domain/pages/Courses/SingleCourse";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/auth" element={<Auth />} />
             <Route path="/home" element={<Home />} />
             <Route path="/courses" element={<Courses />} />
+            <Route path="/courses2" element={<SingleCourse />} />
             <Route path="/vocabulary" element={<Vocabulary />} />
           </Routes>
         </Router>
