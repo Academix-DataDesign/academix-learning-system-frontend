@@ -7,3 +7,25 @@
     margin: 0;
     padding: 0;
 }
+
+.swiper-slide {
+    text-align: center;
+    display: flex !important;
+    justify-content: center;
+    align-items: start;
+  }
+  .swiper-pagination{
+    display: flex !important;
+   gap: 10px;
+   margin-top: 20px;
+  }
+  .mySwiper .swiper-pagination-bullet{
+    height: 6px;
+    width: 30px;
+    border-radius: 12px;
+    margin-top: 5px;
+    background-color: gray;
+  }
+  .mySwiper .swiper-pagination-bullet-active{
+    background-color: blue;
+  }

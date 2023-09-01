@@ -2,9 +2,9 @@ import courseImage from "../../../../assets/course-bg.png";
 
 const CourseInfo = () => {
   return (
-    <div className="p-8 flex justify-center mx-auto items-center gap-10 max-w-[1800px]">
-      <div className="flex flex-col justify-between shadow-lg">
-        <div className="w-full h-full flex flex-col">
+    <div className="p-8 flex  mx-auto gap-10">
+      <div className="flex flex-col gap-10 h-[450px] shadow-lg ">
+        <div className="w-[350px] flex flex-col">
           <img
             src={courseImage}
             alt="Course Image"
@@ -27,7 +27,7 @@ const CourseInfo = () => {
                     fill="#1E2F97"
                   />
                 </svg>
-                <p className="text-center text-lg pl-2">200 Lessons</p>
+                <p className="text-center w-full text-lg pl-2">200 Lessons</p>
               </div>
               <p className="text-zinc-800 text-lg font-normal">Certificate:</p>
               <p className="text-zinc-800 text-lg font-normal">Assigments:</p>
@@ -109,10 +109,68 @@ const CourseInfo = () => {
             </div>
           </div>
         </div>
+        <p className="text-center text-sky-800 text-xl font-normal uppercase">
+          SKILLS you will learn
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className=" w-40 h-10 bg-purple-400 bg-opacity-20 rounded-sm text-center flex items-center justify-center border border-purple-400">
+            <p className=" text-center text-purple-400 text-base font-normal">
+              Print & Editoral
+            </p>
+          </div>
+
+          <div className=" w-40 h-10  bg-teal-300 bg-opacity-20 text-center flex items-center justify-center rounded-sm border border-teal-300">
+            <p className=" text-teal-300 text-base font-normal">Packaging</p>
+          </div>
+
+          <div className=" w-40 h-10  bg-red-400 bg-opacity-20 rounded-sm text-center flex items-center justify-center border border-red-400">
+            <p className="text-center text-red-400 text-base font-normal">
+              Web -Disgn
+            </p>
+          </div>
+
+          <div className=" w-40 h-10 text-center flex items-center justify-center  bg-amber-400 bg-opacity-20 rounded-sm border border-amber-400">
+            <p className="text-center text-amber-400 text-base font-normal">
+              UI/UX
+            </p>
+          </div>
+
+          <div className="w-40 h-10 text-center flex items-center justify-center  bg-blue-500 bg-opacity-20 rounded-sm border border-blue-500">
+            <p className="text-center text-blue-500 text-base font-normal">
+              Brandring
+            </p>
+          </div>
+        </div>
       </div>
-      <div className="w-full flex flex-col justify-between">
+      <div className="w-full flex flex-col gap-10 justify-between">
         <div className="bg-white shadow-lg p-12">
           <p className="text-sky-800 text-3xl font-normal">Description</p>
+          <div className="Line8 w-full h-px shadow border border-white"></div>
+          <p className="pl-10 pt-3 text-neutral-600 text-lg font-normal">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+        <div className="bg-white shadow-lg p-12">
+          <p className="text-sky-800 text-3xl font-normal">Required</p>
+          <div className="Line8 w-full h-px shadow border border-white"></div>
+          <p className="pl-10 pt-3 text-neutral-600 text-lg font-normal">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+        <div className="bg-white shadow-lg p-12">
+          <p className="text-sky-800 text-3xl font-normal">You will learn</p>
           <div className="Line8 w-full h-px shadow border border-white"></div>
           <p className="pl-10 pt-3 text-neutral-600 text-lg font-normal">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
